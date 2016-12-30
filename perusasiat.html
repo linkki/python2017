@@ -8,7 +8,7 @@
       <!-- HEAD SECTION-->
 <head>
     <meta charset="utf-8">
-    <title>Bootstrap Multipurpose Template - Linkki</title>
+    <title>Linkki</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
      <!--[if lt IE 9]><script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
@@ -61,12 +61,83 @@
                 <div data-scrollreveal="wait 0.5s and then ease-in-out 50px" class="col-md-6 col-md-offset-3">
 
                     <div class="align-center">
-                        <h2 class="main-text">PERUSASIAT</h2>
+                        <h2 class="main-text">PERUSASIAT - TEHDÄÄN LASKIN </h2>
 
                     </div>
                 </div>
             </div>
 
+    </section>
+
+    <section style="margin-top:20px;">
+        <div class="container">
+            <div class="row">
+              <div class="align-center">
+                Nyt sinulla pitäisi olla asennettuna Python, Pygame ja Pycharm (tai jokin muu tekstieditori Pycharmin tilalla).
+                Tässä osiossa opetellaan Pythonin alkeet: tulostus, muuttujien käyttäminen, syötteen kysyminen käyttäjältä sekä ehtolauseet.
+              </br></br>
+                Näiden avulla teemme pieniä harjoituksia ja lopulta laskimen, jolle käyttäjä voi antaa kaksi lukua sekä haluamansa laskutoimituksen.
+                Tulokseksi käyttäjä saa laskutoimituksen tuloksen.
+
+                <h2>Tehtävä 1: Tulostus</h2>
+                Luo uusi projekti ja anna sille nimeksi laskin. Pycharmissa tämä tapahtuu File -> New Project -valikkojen kautta.
+                Luo projektiin uusi Python-tiedosto nimeltään laskin ja kirjoita tiedostoon koodi:
+              </br>
+                <code>print("Hei maailma")</code>
+              </br>  </br>
+             Aja koodi joko Run -> Run 'laskin' -valikosta tai vihreästä kolmiosta painamalla. Ohjelman pitäisi tulostaa "Hei maailma". Tulostuksen pitäisi Pycharm-editorissa näyttää tältä:
+           </br></br>
+             <img src="assets/img/heimaailma.png" />
+           </br>
+
+           <h2>Muuttujat </h2>
+           Pythonissa tieto talletetaan muuttujiin. Python on <b>dynaamisesti tyypitetty</b> ohjelmointikieli. Se tarkoittaa sitä, että yhteen muuttujaan
+           voi tallettaa monenlaisia arvoja. Muuttujaan voi tallettaa arvoja esimerkiksi näin:
+          </br></br>
+           <img src="assets/img/muuttuja.png" /> </br>
+           Muuttujan voi myös tulostaa. Se edellyttää kuitenkin että muuttujaan on tallennettu jokin arvo aiemmin. Muuttujan tulostus tapahtuu näin:
+
+          </br>
+           <img src="assets/img/muuttujantulostus.png" />
+
+           <h2> Tehtävä 2: Muuttujan tulostus </h2>
+           Määrittele muuttuja nimi, jolle annat arvoksi oman nimesi. Tulosta tämän jälkeen tämä muuttuja. Tulostua pitäisi muuttujan sisältö, eli oma nimesi.
+
+           <h2>Laskutoimitukset</h2>
+
+           Tietokone osaa tehdä laskutoimituksia Python-koodin antamien ohjeiden mukaisesti. Harjoitellaan nyt tekemään yhteen-, kerto- ja vähennyslaskuja Pythonilla.
+           Seuraava koodinpätkä tulostaa lukujen 1 ja 4 summan.
+
+         </br>
+         <img src="assets/img/yhteenlasku.png" />
+
+         <h2> Tehtävä 3: Tee laskutoimituksia </h2>
+         Tee ohjelma, joka tulostaa kahden luvun tulon ja erotuksen ylläolevan yhteenlaskun tulostusesimerkin mukaisesti. Tarvitset tässä + -merkin tilalla merkkejä - ja *.
+
+         <h2> Tehtävä 4: Laskutoimituksen tulos muuttujaan </h2>
+         Tee ohjelma, joka laskee yhteenlaskun 1 + 5 tallentaen sen tuloksen muuttujaan summa. Tämän jälkeen tulosta muuttuja summa. Tulostuksen pitäisi näyttää seuraavalta:
+        </br>  </br>
+         <img src="assets/img/yhteenlaskutulostus.png" />
+
+         <h2> Luvun kysyminen käyttäjältä </h2>
+         Nyt osaamme tulostaa muuttujan sekä tekstiä. Entä jos haluaisimme tehdä laskutoimituksen, jonka luvut riippuvat käyttäjästä? Haluaisimme siis, että käyttäjä voisi antaa kaksi
+         lukua ja tietokone voisi laskea esimerkiksi niiden yhteenlaskun. Näin pääsisimme lähemmäksi osion lopullista tavoitettamme, laskimen koodaamista. Seuraava koodi kysyy käyttäjältä kaksi lukua,
+         asettaa ne muuttujiin x ja y, sekä tulostaa niiden summan. Kirjoita seuraava koodi tekstieditoriin, aja se ja testaa ohjelmaa.
+
+       </br></br> <img src="assets/img/lukujen_kysyminen.png" />
+
+       <br> Ylläoleva koodi näyttää monimutkaiselta siksi, että se kysyy lukuja eikä tekstiä. Poista nyt lukujen kysymisistä int( ,10) -ympärykset siten että koodisi näyttää sen jälkeen tältä:
+     </br></br> <img src="assets/img/lukujen_kysyminen_stringeina.png" />
+
+   </br> Testaa ohjelmaa. Mitä tulokselle käy, onko tulos oikein? Mistä arvelet sen johtuvan?
+
+      <h2>Tehtävä 5: Tulosta käyttäjältä kysyttyjen lukujen osamäärä </h2>
+      Tee ohjelma, joka kysyy käyttäjältä kaksi lukua ja tulostaa niiden osamäärän. Kahden luvun jakolasku tehdään Pythonissa / -merkillä.
+
+      <h2>Ehdollisuus</h2>
+      Seuraavaksi teemme ohjelman, joka kysyy käyttäjältä vuoden. Mikäli vuosi on jo mennyt (eli on pienempi kuin 2017), tulostetaan "Vuosi meni jo!", muuten tulostetaan: "Vielä on aikaa". 
+            </div>
+        </div>
     </section>
 
 
