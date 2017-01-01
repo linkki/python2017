@@ -91,8 +91,8 @@
            </br>
 
            <h2>Muuttujat </h2>
-           Pythonissa tieto talletetaan muuttujiin. Python on <b>dynaamisesti tyypitetty</b> ohjelmointikieli. Se tarkoittaa sitä, että yhteen muuttujaan
-           voi tallettaa monenlaisia arvoja. Muuttujaan voi tallettaa arvoja esimerkiksi näin:
+           Pythonissa tieto talletetaan muuttujiin. Python on <i>dynaamisesti tyypitetty</i> ohjelmointikieli. Se tarkoittaa sitä, että yhteen muuttujaan
+           voi tallettaa monenlaisia arvoja. Allaolevan esimerkin ensimmäisellä rivillä talletetaan muuttujaan x <i>luku</i> ja toisella rivillä talletetaan muuttujaan paikka <i>merkkijono</i>.
           </br></br>
            <img src="assets/img/muuttuja.png" /> </br>
            Muuttujan voi myös tulostaa. Se edellyttää kuitenkin että muuttujaan on tallennettu jokin arvo aiemmin. Muuttujan tulostus tapahtuu näin:
@@ -101,7 +101,7 @@
            <img src="assets/img/muuttujantulostus.png" />
 
            <h2> Tehtävä 2: Muuttujan tulostus </h2>
-           Määrittele muuttuja nimi, jolle annat arvoksi oman nimesi. Tulosta tämän jälkeen tämä muuttuja. Tulostua pitäisi muuttujan sisältö, eli oma nimesi.
+           Määrittele muuttuja nimi, jolle annat arvoksi oman nimesi <i>merkkijonona</i> (eli lainausmerkit "" nimen ympärillä). Tulosta tämän jälkeen tämä muuttuja. Tulostua pitäisi muuttujan sisältö, eli oma nimesi.
 
            <h2>Laskutoimitukset</h2>
 
@@ -119,7 +119,7 @@
         </br>  </br>
          <img src="assets/img/yhteenlaskutulostus.png" />
 
-         <h2> Luvun kysyminen käyttäjältä </h2>
+         <h2> Syötteen kysyminen käyttäjältä </h2>
          Nyt osaamme tulostaa muuttujan sekä tekstiä. Entä jos haluaisimme tehdä laskutoimituksen, jonka luvut riippuvat käyttäjästä? Haluaisimme siis, että käyttäjä voisi antaa kaksi
          lukua ja tietokone voisi laskea esimerkiksi niiden yhteenlaskun. Näin pääsisimme lähemmäksi osion lopullista tavoitettamme, laskimen koodaamista. Seuraava koodi kysyy käyttäjältä kaksi lukua,
          asettaa ne muuttujiin x ja y, sekä tulostaa niiden summan. Kirjoita seuraava koodi tekstieditoriin, aja se ja testaa ohjelmaa.
@@ -130,12 +130,89 @@
      </br></br> <img src="assets/img/lukujen_kysyminen_stringeina.png" />
 
    </br> Testaa ohjelmaa. Mitä tulokselle käy, onko tulos oikein? Mistä arvelet sen johtuvan?
+ </br> Vastaus on, että int( ,10) -koodilla ympäröity käyttäjältä luvun kysyminen kohtelee kysyttyä lukua <i>lukuna</i>, kun taas ilman
+    int( ,10) -ympäryksiä oleva input-käsky kohtelee kysyttyä lukua <i>merkkijonona</i>. Ensimmäisessä esimerkissä siis lukujen yhteenlasku lasketaan oikein,
+    toisessa esimerkissä vain yhdistetään kysytyt luvut niin että esimerkiksi luvuista 1 ja 2 tulisi tulokseksi "12".
 
       <h2>Tehtävä 5: Tulosta käyttäjältä kysyttyjen lukujen osamäärä </h2>
       Tee ohjelma, joka kysyy käyttäjältä kaksi lukua ja tulostaa niiden osamäärän. Kahden luvun jakolasku tehdään Pythonissa / -merkillä.
 
       <h2>Ehdollisuus</h2>
-      Seuraavaksi teemme ohjelman, joka kysyy käyttäjältä vuoden. Mikäli vuosi on jo mennyt (eli on pienempi kuin 2017), tulostetaan "Vuosi meni jo!", muuten tulostetaan: "Vielä on aikaa". 
+      Ehdollisuus tarkoittaa sitä, että ohjelmassa seuraavaksi suoritettavat käskyt riippuvat ohjelmoijan antamista ehdoista. Otetaan esimerkiksi ohjelma, joka kysyy käyttäjältä lukua ja tulostaa
+      sen itseisarvon. Itseisarvo tarkoittaa luvun etäisyyttä nollaan. Positiivisilla luvuilla itseisarvo on siis luku itse, ja negatiivisilla luvuilla itseisarvo on -1 * luku.
+
+    </br></br> <img src="assets/img/itseisarvo.png" />
+
+      <br>
+
+      Ylläoleva ohjelma toimii siis niin, että ensimmäisellä rivillä kysytään käyttäjältä syöte ja tallennetaan se muuttujaan luku.
+      Toisella rivillä määritetään ehto: jos luku on pienempi kuin 0, siirrytään seuraavalle riville. Jos luku ei ole pienempi kuin 0
+      (eli on 0 tai suurempi kuin 0), siirrytään suoraan else-lohkoon eli viidennelle riville. Kopioi ylläoleva ohjelma ja kokeile sitä
+      sekä positiivisilla että negatiivisilla luvuilla. Tulet tarvitsemaan sitä pohjaksi seuraavaan tehtävään.
+
+      <h3> Huom! Else -lohko ei ole pakollinen. Mikäli ylläolevasta esimerkistä poistettaisiin else-lohko sisältöineen, ohjelma
+      tulostaisi luvun itseisarvon vain jos se on negatiivinen, ei muuten. </h3>
+
+      <h2> Tehtävä 6: Vuositarkistus </h2>
+      Tee ohjelma, joka kysyy käyttäjältä vuoden. Mikäli vuosi on jo mennyt (eli on pienempi kuin 2017), tulostetaan "Vuosi meni jo!", muuten tulostetaan: "Vuosi ei ole vielä mennyt.".
+      Käytä kopioimaasi itseisarvoesimerkkiä pohjana.
+
+      <h2> Suuruuden vertailuoperaattorit </h2>
+
+      Edellisessä tehtävässä käytettiin if-lauseessa pienempi kuin -operaattoria. Seuraavassa taulukossa on vertailuoperaattorit ja niiden merkitykset.
+
+      <table border="1" style=" margin: auto; margin-top: 20px;">
+        <tr>
+          <th>operaattori</th>
+          <th>merkitys</th>
+        </tr>
+        <tr>
+          <td><</td>
+          <td>pienempi kuin</td>
+        </tr>
+        <tr>
+          <td>></td>
+          <td>suurempi kuin</td>
+        </tr>
+        <tr>
+          <td>==</td>
+          <td>yhtä suuri kuin</td>
+        </tr>
+        <tr>
+          <td><=</td>
+          <td>pienempi tai yhtä suuri kuin</td>
+        </tr>
+        <tr>
+          <td>>=</td>
+          <td>suurempi tai yhtä suuri kuin</td>
+        </tr>
+
+      </table>
+
+      <h2> Monta else -lohkoa </h2>
+      Edellisessä tehtävässä ohjelma tarkisti, onko käyttäjän antama vuosi mennyt vai ei. Nyt haluamme tehdä tarkempaa analyysiä, kuinka kaukana menneisyydessä annettu vuosiluku on.
+      Seuraavassa esimerkissä kysytään käyttäjältä luku. Sen jälkeen siirrytään ehtoihin. Jos luku on suurempi tai yhtä suuri kuin 2017, tulostetaan lohkon sisällä oleva teksti ja ohjelman suoritus loppuu.
+      Seuraavan ehdon tunnussana <i>elif</i> on lyhenne sanoista <i>else if</i> ja tarkoittaa suomeksi <i> muuten jos </i>. Elif -ehtoihin mennään, jos ensimmäinen if-ehto ei toteudu.
+      Elif-ehdot käydään läpi järjestyksessä ja heti jos yksikin ehto toteutuu, sen sisällä oleva ohjelmapätkä suoritetaan ja tässä esimerkissä ohjelman suoritus lopetetaan. Mikäli
+      yksikään elif-ehdoista ei toteudu, suoritetaan else-lohkon sisällä oleva koodi.
+    </br></br> <img src="assets/img/tarkemmatvuodet.png" />
+
+      <br>
+
+      <h2> Laskin </h2>
+      Seuraava projekti on tehdä laskin, joka ottaa syötteinä kaksi lukua ja laskutoimituksen. Ohjelman tulee laskea näille luvuille
+      käyttäjän antama laskutoimitus ja tulostaa lopputulos.
+
+      <h2> Tehtävä 7: Laskin osa 1 </h2>
+      Laskinohjelman alussa tulee kysyä käyttäjältä kaksi lukua, tallentaa ne muuttujiin, sekä kysyä laskutoimitus <i>merkkijonona</i> ja tallentaa se muuttujaan.
+      Lukujen ja laskutoimituksen tulee näyttää seuraavalta ohjelmaa suoritettaessa:
+
+    </br></br> <img src="assets/img/laskinsyöte.png" />
+
+      <br>
+
+      Palaa kohtaan Syötteen kysyminen käyttäjältä ja huomioi, että luku kysytään käyttäjältä eri tavalla kuin merkkijono.
+
             </div>
         </div>
     </section>

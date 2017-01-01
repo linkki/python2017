@@ -6,7 +6,7 @@
 
     100% To use For Personal And Commercial Use.
     IN EXCHANGE JUST GIVE US CREDITS AND TELL YOUR FRIENDS ABOUT US
-   
+
     ========================================================  */
 
 
@@ -19,6 +19,10 @@
 /*==========================================================================
   General
   ========================================================================== */
+
+td {
+	padding: 10px;
+}
 body {
 	color:#000;
 	background: #fff;
@@ -26,7 +30,7 @@ body {
 	line-height: 1.6em;
 	font-weight: 300;
 	text-shadow: none;
-    
+
 }
 
 body, h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
@@ -65,7 +69,7 @@ a:hover {
 }
 
 /*==========================================================================
- Adjustments 
+ Adjustments
  ========================================================================== */
 .row {
 	z-index: 9999;
@@ -140,7 +144,7 @@ a:hover {
 .navbar-nav {
 	float: right;
 	margin-bottom: 0;
-	padding-bottom:0;	
+	padding-bottom:0;
 }
 
 .navbar .navbar-nav > .active > a {
@@ -195,7 +199,7 @@ h1 a.navbar-brand {
 	font-weight: 900;
     color:#fff;
 }
-  
+
 
 
 /*==========================
@@ -208,13 +212,13 @@ About Section
 	box-sizing:border-box;
 	-webkit-border-radius:50%;
 		-moz-border-radius:50%;
-			border-radius:50%;	
+			border-radius:50%;
 	margin: 0 0 20px 0;
 }
 .member-photo img {
 	-webkit-border-radius:50%;
 		-moz-border-radius:50%;
-			border-radius:50%;	
+			border-radius:50%;
 }
 
 .team-detail h4 {
@@ -269,7 +273,7 @@ nav#filter a {
 }
 
 
-.portfolio-items article img {width:100%;height: 280px;} 
+.portfolio-items article img {width:100%;height: 280px;}
 
 .portfolio-item {
 	display: block;
@@ -447,7 +451,7 @@ div.Contact-response-output {
 .footer {
 	background: #242424;
 	margin: 0;
-    padding: 30px 0 10px; 
+    padding: 30px 0 10px;
     color:#fff;
 }
 
@@ -521,7 +525,7 @@ a.scrollup:hover{
 .social-network a.icoLinkedin:hover {
 	background-color:#007bb7;
 }
-.social-network a.icoRss:hover i, .social-network a.icoFacebook:hover i, .social-network a.icoTwitter:hover i, 
+.social-network a.icoRss:hover i, .social-network a.icoFacebook:hover i, .social-network a.icoTwitter:hover i,
 .social-network a.icoGoogle:hover i, .social-network a.icoVimeo:hover i, .social-network a.icoLinkedin:hover i {
 	color:#fff;
 }
@@ -770,11 +774,11 @@ Media queries
 	.navbar .navbar-collapse ul.nav li {
 		border-bottom: 1px solid #1A1919;
 	}
-	
-	
+
+
 	.team-member,.col-lg-4 {
 		margin-bottom: 30px;
 	}
-	
-	
+
+
 }
