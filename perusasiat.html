@@ -87,18 +87,21 @@
               </br>  </br>
              Aja koodi joko Run -> Run 'laskin' -valikosta tai vihreästä kolmiosta painamalla. Ohjelman pitäisi tulostaa "Hei maailma". Tulostuksen pitäisi Pycharm-editorissa näyttää tältä:
            </br></br>
-             <img src="assets/img/heimaailma.png" />
+             <img src="assets/img/heimaailma.png" alt="tulostus Hei maailma" />
            </br>
 
            <h2>Muuttujat </h2>
            Pythonissa tieto talletetaan muuttujiin. Python on <i>dynaamisesti tyypitetty</i> ohjelmointikieli. Se tarkoittaa sitä, että yhteen muuttujaan
            voi tallettaa monenlaisia arvoja. Allaolevan esimerkin ensimmäisellä rivillä talletetaan muuttujaan x <i>luku</i> ja toisella rivillä talletetaan muuttujaan paikka <i>merkkijono</i>.
+           <i>Merkkijono</i> tarkoittaa tekstiä, ja merkkijonon tunnistaa ympärillä olevista lainausmerkeistä. Esimerkiksi "kissa" on merkkijono.
           </br></br>
            <img src="assets/img/muuttuja.png" /> </br>
+
+           <h3> Muuttujan ympärillä ei ole lainausmerkkejä! </h3>
            Muuttujan voi myös tulostaa. Se edellyttää kuitenkin että muuttujaan on tallennettu jokin arvo aiemmin. Muuttujan tulostus tapahtuu näin:
 
           </br>
-           <img src="assets/img/muuttujantulostus.png" />
+           <img src="assets/img/muuttujantulostus.png" alt="print(paikka)" />
 
            <h2> Tehtävä 2: Muuttujan tulostus </h2>
            Määrittele muuttuja nimi, jolle annat arvoksi oman nimesi <i>merkkijonona</i> (eli lainausmerkit "" nimen ympärillä). Tulosta tämän jälkeen tämä muuttuja. Tulostua pitäisi muuttujan sisältö, eli oma nimesi.
@@ -109,7 +112,7 @@
            Seuraava koodinpätkä tulostaa lukujen 1 ja 4 summan.
 
          </br>
-         <img src="assets/img/yhteenlasku.png" />
+         <img src="assets/img/yhteenlasku.png" alt="print(1 + 4)"/>
 
          <h2> Tehtävä 3: Tee laskutoimituksia </h2>
          Tee ohjelma, joka tulostaa kahden luvun tulon ja erotuksen ylläolevan yhteenlaskun tulostusesimerkin mukaisesti. Tarvitset tässä + -merkin tilalla merkkejä - ja *.
@@ -124,10 +127,13 @@
          lukua ja tietokone voisi laskea esimerkiksi niiden yhteenlaskun. Näin pääsisimme lähemmäksi osion lopullista tavoitettamme, laskimen koodaamista. Seuraava koodi kysyy käyttäjältä kaksi lukua,
          asettaa ne muuttujiin x ja y, sekä tulostaa niiden summan. Kirjoita seuraava koodi tekstieditoriin, aja se ja testaa ohjelmaa.
 
-       </br></br> <img src="assets/img/lukujen_kysyminen.png" />
+       </br></br> <img src="assets/img/lukujen_kysyminen.png" alt="x = int(input("Anna ensimmäinen luku: "), 10) &#10; y = int(input("Anna toinen luku: "), 10)
+        &#10; summa = x + y &#10; print(summa)" />
 
        <br> Ylläoleva koodi näyttää monimutkaiselta siksi, että se kysyy lukuja eikä tekstiä. Poista nyt lukujen kysymisistä int( ,10) -ympärykset siten että koodisi näyttää sen jälkeen tältä:
-     </br></br> <img src="assets/img/lukujen_kysyminen_stringeina.png" />
+     </br></br> <img src="assets/img/lukujen_kysyminen_stringeina.png" alt="x = input("Anna ensimmäinen luku: ") &#10;
+     y = input("Anna toinen luku: ") &#10;
+     summa = x + y &#10; print(summa)"/>
 
    </br> Testaa ohjelmaa. Mitä tulokselle käy, onko tulos oikein? Mistä arvelet sen johtuvan?
  </br> Vastaus on, että int( ,10) -koodilla ympäröity käyttäjältä luvun kysyminen kohtelee kysyttyä lukua <i>lukuna</i>, kun taas ilman
@@ -141,7 +147,11 @@
       Ehdollisuus tarkoittaa sitä, että ohjelmassa seuraavaksi suoritettavat käskyt riippuvat ohjelmoijan antamista ehdoista. Otetaan esimerkiksi ohjelma, joka kysyy käyttäjältä lukua ja tulostaa
       sen itseisarvon. Itseisarvo tarkoittaa luvun etäisyyttä nollaan. Positiivisilla luvuilla itseisarvo on siis luku itse, ja negatiivisilla luvuilla itseisarvo on -1 * luku.
 
-    </br></br> <img src="assets/img/itseisarvo.png" />
+    </br></br> <img src="assets/img/itseisarvo.png" alt="luku = int(input("Anna luku jonka itseisarvon haluat tietää: "), 10)
+     &#10; if luku < 0:
+     &#10; &emsp; print(-1 * luku)
+     &#10; else:
+      &#10; &emsp; print(luku)" />
 
       <br>
 
@@ -189,13 +199,21 @@
 
       </table>
 
-      <h2> Monta else -lohkoa </h2>
+      <h2 id="montaelselohkoa"> Monta else -lohkoa </h2>
       Edellisessä tehtävässä ohjelma tarkisti, onko käyttäjän antama vuosi mennyt vai ei. Nyt haluamme tehdä tarkempaa analyysiä, kuinka kaukana menneisyydessä annettu vuosiluku on.
       Seuraavassa esimerkissä kysytään käyttäjältä luku. Sen jälkeen siirrytään ehtoihin. Jos luku on suurempi tai yhtä suuri kuin 2017, tulostetaan lohkon sisällä oleva teksti ja ohjelman suoritus loppuu.
       Seuraavan ehdon tunnussana <i>elif</i> on lyhenne sanoista <i>else if</i> ja tarkoittaa suomeksi <i> muuten jos </i>. Elif -ehtoihin mennään, jos ensimmäinen if-ehto ei toteudu.
       Elif-ehdot käydään läpi järjestyksessä ja heti jos yksikin ehto toteutuu, sen sisällä oleva ohjelmapätkä suoritetaan ja tässä esimerkissä ohjelman suoritus lopetetaan. Mikäli
       yksikään elif-ehdoista ei toteudu, suoritetaan else-lohkon sisällä oleva koodi.
-    </br></br> <img src="assets/img/tarkemmatvuodet.png" />
+    </br></br> <img src="assets/img/tarkemmatvuodet.png" alt="luku = int(input("Anna vuosi: "), 10)
+     &#10; if luku >= 2017:
+     &#10; &emsp; print("Vuosi ei ole vielä mennyt.")
+     &#10; elif luku < 1900:
+     &#10; &emsp; print("Vuosi on 1800-luvulla tai aiemmin.")
+     &#10; elif luku < 2000:
+     &#10; &emsp; print("Vuosi on 1900-luvulla")
+     &#10; else:
+     &#10; &emsp; print("Vuosi on 2000-luvulla")" />
 
       <br>
 
@@ -207,7 +225,9 @@
       Laskinohjelman alussa tulee kysyä käyttäjältä kaksi lukua, tallentaa ne muuttujiin, sekä kysyä laskutoimitus <i>merkkijonona</i> ja tallentaa se muuttujaan.
       Lukujen ja laskutoimituksen tulee näyttää seuraavalta ohjelmaa suoritettaessa:
 
-    </br></br> <img src="assets/img/laskinsyöte.png" />
+    </br></br> <img src="assets/img/laskinsyöte.png" alt="Anna ensimmäinen luku: 1
+    &#10; Anna toinen luku: 2
+    &#10; Anna laskutoimitus joukosta +, -, * ja /: +"/>
 
       <br>
 
@@ -215,15 +235,19 @@
 
       <h2> Tehtävä 8: Laskin osa 2 </h2>
       Nyt meillä on muuttujiin tallennettuina kaksi lukua <i> lukuina </i> sekä laskutoimitus <i> merkkijonona </i>. Seuraavaksi tarvitsemme ehdollisuutta, tavoitteena
-      tunnistaa eri laskutoimitukset ja laskea lopputulos tunnistetun laskutoimituksen perusteella. Vinkkinä kannattaa katsoa kohtaa Monta else -lohkoa sekä seuraavaa kuvaa:
+      tunnistaa eri laskutoimitukset ja laskea lopputulos tunnistetun laskutoimituksen perusteella. Vinkkinä kannattaa katsoa kohtaa <a href="#montaelselohkoa"> "Monta else -lohkoa" </a> sekä seuraavaa kuvaa:
 
-    </br></br> <img src="assets/img/muuttujaplussa.png" />
+    </br></br> <img src="assets/img/muuttujaplussa.png" alt="if muuttuja == "+":
+    &#10; &emsp; print("Muuttuja oli +")"/>
       <br>
 
       Sinun täytyy siis toteuttaa ehdollisuus tunnistamaan eri laskutoimitukset, ja tulostaa laskutoimituksen lopputulos jokaisessa lohkossa erikseen, riippuen laskutoimituksesta.
       Testaa että ohjelmasi toimii seuraavanlaisesti (jokaisella laskutoimituksella oikea tulos)
 
-    </br></br> <img src="assets/img/laskinlopputulos.png" />
+    </br></br> <img src="assets/img/laskinlopputulos.png" alt="Anna ensimmäinen luku: 1
+    &#10; Anna toinen luku: 3
+    &#10; Anna laskutoimitus joukosta +, -, * ja /: +
+    &#10; 4" />
       <br>
 
             </div>
