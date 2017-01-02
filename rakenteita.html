@@ -121,10 +121,70 @@
 
              Tulosta lopussa listan lukujen summa, vastauksen pitäisi olla 15.
 
-             <h2> Toistolause While True </h2>
-             Toistolauseita tarvitaan, kun halutaan toistaa jokin ohjelmapätkä monta kertaa. Toistolauseessa voidaan joko
-             määritellä millä ehdolla suoritus loppuu tai määritellä suoritus jatkumaan ikuisesti. Seuraava koodinpätkä tulostaa ikuisesti
-             merkkijonon "Ikuisesti"
+             <h2> Toiston alkeet </h2>
+
+             <p>Huomaamme usein ohjelmakoodissamme tilanteita missä sama asia toistuu usein.  Esimerkiksi, jos haluamme tulostaa luvut yhdestä kymmeneen, on yksi -- kohta onneksi turha -- ratkaisu kirjoittaa jokainen käsky erikseen.</p>
+
+<pre class="sh_python">
+print(1)
+print(2)
+print(3)
+print(4)
+print(5)
+print(6)
+print(7)
+print(8)
+print(9)
+print(10)
+</pre>
+		<p>Entä jos haluaisimme tulostaa kaikki luvut yhdestä sataan, tai vaikka luvut yhdestä käyttäjän antamaan syötteeseen asti?  Tällaisissa tapauksissa käytetään <em>toistorakenteita</em>.  Toistorakenteiden avulla voidaan toteuttaa toistuvia käskyjä. </p>
+
+
+		<h3>while</h3>
+
+		<p>Komento <code>while</code> toistaa lohkonsa koodia niin kauan kun määritelty ehto on voimassa.  Komennon <code>while</code> ehto-osa toimii kuten <code>if</code>:ssä.</p>
+
+		<p>Kuten kaikki lohkot, <code>while</code>:n lohko alkaa kaksoispisteellä. Lohkossa oleva koodi on sisennettyä, ja lohko päättyy sisennyksen loppumiseen.</p>
+
+		<p>Seuraavassa esimerkissä tulostetaan luvut 1,2,..,9,10.  Kun <code>luku</code>-muuttuja saa arvokseen yli 10, <code>while</code>-ehto ei ole enää voimassa ja toistaminen lopetetaan.</p>
+
+<pre class="sh_python">
+luku = 1;
+
+while luku &lt; 11:
+  print(luku)
+  luku = luku + 1
+</pre>
+
+<pre>
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+</pre>
+		<p>Lue ylläoleva "niin pitkään kuin luku on pienempi kuin 11, tulosta luku ja kasvata lukua yhdellä".</p>
+
+		<p>Ylläolevassa koodissa ehto-lausessa olevaa muuttujaa <code>luku</code> kasvatettiin jokaisella kierroksella yhdellä. Päivitysehto voi olla mikä tahansa.</p>
+
+<pre class="sh_python">
+luku = 1024
+
+while luku &gt;= 1:
+  print(luku)
+  luku /= 2; # luku = luku / 2
+</pre>
+
+
+
+             <h3> while True </h3>
+             Seuraava koodinpätkä tulostaa ikuisesti
+             merkkijonon "Ikuisesti". While True siis toistaa sisältöään niin pitkään kunnes se saa käskyn lopettaa, jonka opimme myöhemmin.
 
            </br></br> <img src="assets/img/ikuisesti.png" alt="while True: &#10; &emsp; print('Ikuisesti')"/>
              <br>
@@ -132,7 +192,7 @@
              <h2> Tehtävä 2: Käyttäjältä luvun kysyminen ikuisesti </h2>
              Tee ohjelma, joka kysyy käyttäjältä ikuisesti lukuja ja ylläpitää niiden summaa muuttujassa <i> summa </i>.
 
-             <h2> Lopetetaan kysyminen </h2>
+             <h2> Silmukan suorituksen lopetus: break </h2>
              While True -toistolauseen suoritus loppuu komennolla
 
            </br></br>
@@ -141,7 +201,7 @@
            Komennon voi sijoittaa esimerkiksi if-ehdon sisälle.
 
            <h2> Tehtävä 3: Lukujen kysymisen lopettaminen käyttäjän pyyntöön </h2>
-           Paranna edellistä ohjelmaasi siten, että lukujen kysyminen lopetetaan kun käyttäjä syöttää luvun 0. Tarvitset tähän if-ehtolausetta
+           Paranna edellistä ohjelmaasi siten, että lukujen kysyminen lopetetaan kun käyttäjä syöttää luvun 0. Tällöin käyttäjälle tulostetaan myös summa. Tarvitset tähän if-ehtolausetta
            sekä break-komentoa.
 
            <h2 class="problem"> Ongelma: Käyttäjä syöttää tekstiä kun kysytään lukua</h2>
@@ -158,11 +218,159 @@
           </br> print(syöte)
 
          </code>  </br> </br>
-           <h2> </h2>
+           <h2> int(muuttuja) vs str(muuttuja) </h2>
+
+           int(muuttuja) muuttaa muuttujan luvuksi, kun taas str(muuttuja) muuttaa muuttujan merkkijonoksi. Str-kutsu on usein tarpeellinen, kun
+           halutaan tulostaa luku ja merkkijono samaan aikaan. Tällöin luku pitää muuttaa tulostuksessa merkkijonoksi str-kutsulla. Esimerkiksi seuraava koodi
+           tulostaa luvun ja merkkijonon samalle riville. </br></br>
+
+<pre>
+muuttuja = 9000
+print("Muuttujan muuttuja arvo on: " + str(muuttuja))
+</pre>
 
            <h2> Tehtävä 4: Lopetuskäskyksi merkkijono </h2>
-           Muuta ylläolevaa koodia apuna käyttäen tehtävän 3 ohjelmasi hyväksymään lopetussyötteenä sekä -1 että merkkijono "lopeta".
-           <h2> Toistolause while ehto </h2>
+           Muuta ylläolevaa koodia apuna käyttäen tehtävän 3 ohjelmasi hyväksymään lopetussyötteenä sekä 0 että merkkijono "lopeta".
+
+
+
+           <h2>Tehtävä 5: Sadasta yhteen</h2>
+
+		      <p>Tee ohjelma, joka tulostaa kokonaisluvut väliltä 100&ndash;1.</p>
+
+		      <p>Ohjelman tulostus on seuraava:</p>
+
+<pre>
+100
+99
+98
+(välissä paljon rivejä)
+3
+2
+1
+</pre>
+
+<h2>Tehtävä 6: Parilliset luvut</h2>
+
+		      <p>Tee ohjelma, joka tulostaa parilliset kokonaisluvut väliltä 2&ndash;100.</p>
+
+<pre>
+2
+4
+6
+(välissä paljon rivejä)
+96
+98
+100
+</pre>
+
+
+<h2>Tehtävä 7: Lukuun asti</h2>
+
+		      <p>Kirjoita ohjelma, joka tulostaa kokonaisluvut 1:stä käyttäjän antamaan lukuun asti.</p>
+
+<pre>
+Mihin asti? <font color="red">3</font>
+1
+2
+3
+</pre>
+
+<pre>
+Mihin asti? <font color="red">5</font>
+1
+2
+3
+4
+5
+</pre>
+
+<h2>For</h2>
+
+Tämän osion alussa kävimme for-silmukalla kaikki listan alkiot läpi. For on kuitenkin paljon monikäyttöisempi rakenne, ja nyt tutustumme sen muihin käyttötapoihin.
+
+		<p>Seuraavassa esimerkissä aloitamme laskemisen 0:sta ja toistamme <code>while</code>-toistolausekkeen lohkoa, kunnes olemme lukeneet käyttäjältä kolme lukua, jolloin ehto ei ole enää voimassa.</p>
+
+<pre class="sh_python">
+print("Anna kolme lukua ja kerron niiden summan")
+
+luettu = 0
+summa = 0
+
+while luettu < 3:
+    luku = int(input("Anna luku: "))
+
+    summa = summa + luku   # tai summa += luku;
+    luettu += 1            # tai luettu = luettu + 1;
+
+
+print("Lukujen summa on: " + str(summa))
+</pre>
+
+		<p>Tiedämme usein jo etukäteen kuinka monta kertaa tahdomme suorittaa toistolausekkeen lohkon. Edellisessä esimerkissä suoritimme lohkon 3 kertaa. Tämän voi ilmaista myös käyttämällä <em>for</em>-toistolausetta seuraavalla tavalla.</p>
+
+<pre class="sh_python">
+print("Anna kolme lukua ja kerron niiden summan")
+
+summa = 0
+
+for i in range(3): # i in range(3) tarkoittaa käydään luvut 0, 1, 2 yksitellen läpi
+    luku = int(input("Anna luku: "))
+    summa = summa + luku   # tai summa += luku;
+
+print("Lukujen summa on: " + str(summa))
+</pre>
+
+                <p>Komento <code>range</code> antaa kaikki luvut nollan ja komennolle range <em>parametrina</em> annetun luvun välillä. Esimerkiksi komento <code>range(10)</code> antaisi luvut <code>0, 1, 2, 3, 4, 5, 6, 7, 8, 9</code>.
+
+		<p>Tässä ei kannata säikähtää yksikirjaimista muuttujaa <em>i</em>. Sen käytöllä on tietojenkäsittelyssä ja ohjelmoinnissa pitkät perinteet.</p>
+
+		<p><em>for</em>-lauseke käy yksitellen <code>range</code>-komennolla saadut luvut läpi. Jokainen luku on vuorollaan muuttujassa <code>i</code>. Muuttujan <code>i</code> arvon voi tulostaa aivan kuten kaikkien muidenkin muuttujien arvon. Esimerkiksi lukujen 1, 2, ... , 10 tulostaminen käy seuraavasti for-lausekkeen avulla.</p>
+
+<pre class="sh_python">
+for i in range(10): # i in range(10) käy läpi luvut 0, 1, ..., 9
+  print(str(i + 1))
+</pre>
+
+<pre>
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+</pre>
+
+                <p>Komennolle <code>range</code> voi myös kertoa luvun josta aloitetaan. Ylläolevan tulostuksen saa aikaan myös seuraavasti:</p>
+
+<pre class="sh_python">
+for i in range(1, 11): # i in range(1, 11) käy läpi luvut 1, 2, ..., 10
+  print(i) # huomaa että pelkkää lukua ei tarvitse muuttaa tekstityyppiseksi tulostettaessa
+</pre>
+
+
+		<p>Käytännössä for on <em>while</em>-lauseen pelkistetympi muoto. Komennolle <code>range</code> voi asettaa myös kolmannen arvon, joka kertoo askeleen koosta. Esimerkiksi komento <code>range(1, 10, 3)</code> käy läpi luvut 1, 4, 7 (luku 10 ei tule mukaan koska toiseksi arvoksi -- eli ylärajaksi -- on asetettu 10).</p>
+
+<pre class="sh_python">
+print "Tulostetaan joka kolmas luku.";
+
+for i in range(1, 10, 3):
+  print(i)
+</pre>
+
+<pre>
+Tulostetaan joka kolmas luku.
+1
+4
+7
+</pre>
+
+
+
 
               </div>
             </div>
