@@ -23,6 +23,11 @@
 td {
 	padding: 10px;
 }
+
+code {
+	background: white;
+	color: black;
+}
 body {
 	color:#000;
 	background: #fff;
