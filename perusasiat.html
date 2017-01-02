@@ -144,7 +144,12 @@
       Tee ohjelma, joka kysyy käyttäjältä kaksi lukua ja tulostaa niiden osamäärän. Kahden luvun jakolasku tehdään Pythonissa / -merkillä.
 
       <h2>Ehdollisuus</h2>
-      Ehdollisuus tarkoittaa sitä, että ohjelmassa seuraavaksi suoritettavat käskyt riippuvat ohjelmoijan antamista ehdoista. Otetaan esimerkiksi ohjelma, joka kysyy käyttäjältä lukua ja tulostaa
+      Ehdollisuus tarkoittaa sitä, että ohjelmassa seuraavaksi suoritettavat käskyt riippuvat ohjelmoijan antamista ehdoista.
+
+
+      <h2> Esimerkki ehdollisuudesta: Itseisarvo </h2>
+
+      Otetaan esimerkiksi ohjelma, joka kysyy käyttäjältä lukua ja tulostaa
       sen itseisarvon. Itseisarvo tarkoittaa luvun etäisyyttä nollaan. Positiivisilla luvuilla itseisarvo on siis luku itse, ja negatiivisilla luvuilla itseisarvo on -1 * luku.
 
     </br></br> <img src="assets/img/itseisarvo.png" alt="luku = int(input("Anna luku jonka itseisarvon haluat tietää: "), 10)
@@ -199,21 +204,37 @@
 
       </table>
 
+      <h2> Esimerkki ehdollisuudesta: Salasana </h2>
+
+      Seuraava esimerkkikoodi kysyy käyttäjältä syötettä <i> merkkijonona </i>. Mikäli syöte on sama kuin salasanamme
+      "pythonkerho2017", paljastetaan salainen tieto kerhon ajankohdasta. Mikäli käyttäjän antama salasana on väärin,
+      tulostetaan "Salasana väärin!".
+
+     </br>
+     <img src="assets/img/salasana.png" alt="
+      &#10; salasana = 'pythonkerho2017'
+      &#10; syöte = input('Anna salasana: ')
+
+      &#10; if syöte == salasana:
+       &#10; &emsp; print('Python-kerho keskiviikkoisin linkissä!')
+       &#10; else:
+      &#10;  &emsp; print('Salasana väärin!')" />  </br>
+
       <h2 id="montaelselohkoa"> Monta else -lohkoa </h2>
       Edellisessä tehtävässä ohjelma tarkisti, onko käyttäjän antama vuosi mennyt vai ei. Nyt haluamme tehdä tarkempaa analyysiä, kuinka kaukana menneisyydessä annettu vuosiluku on.
       Seuraavassa esimerkissä kysytään käyttäjältä luku. Sen jälkeen siirrytään ehtoihin. Jos luku on suurempi tai yhtä suuri kuin 2017, tulostetaan lohkon sisällä oleva teksti ja ohjelman suoritus loppuu.
       Seuraavan ehdon tunnussana <i>elif</i> on lyhenne sanoista <i>else if</i> ja tarkoittaa suomeksi <i> muuten jos </i>. Elif -ehtoihin mennään, jos ensimmäinen if-ehto ei toteudu.
       Elif-ehdot käydään läpi järjestyksessä ja heti jos yksikin ehto toteutuu, sen sisällä oleva ohjelmapätkä suoritetaan ja tässä esimerkissä ohjelman suoritus lopetetaan. Mikäli
       yksikään elif-ehdoista ei toteudu, suoritetaan else-lohkon sisällä oleva koodi.
-    </br></br> <img src="assets/img/tarkemmatvuodet.png" alt="luku = int(input("Anna vuosi: "), 10)
+    </br></br> <img src="assets/img/tarkemmatvuodet.png" alt="luku = int(input('Anna vuosi: '), 10)
      &#10; if luku >= 2017:
-     &#10; &emsp; print("Vuosi ei ole vielä mennyt.")
+     &#10; &emsp; print('Vuosi ei ole vielä mennyt.')
      &#10; elif luku < 1900:
-     &#10; &emsp; print("Vuosi on 1800-luvulla tai aiemmin.")
+     &#10; &emsp; print('Vuosi on 1800-luvulla tai aiemmin.')
      &#10; elif luku < 2000:
-     &#10; &emsp; print("Vuosi on 1900-luvulla")
+     &#10; &emsp; print('Vuosi on 1900-luvulla')
      &#10; else:
-     &#10; &emsp; print("Vuosi on 2000-luvulla")" />
+     &#10; &emsp; print('Vuosi on 2000-luvulla')" />
 
       <br>
 
