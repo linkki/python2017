@@ -24,6 +24,10 @@ td {
 	padding: 10px;
 }
 
+.problem {
+	color:red;
+}
+
 code {
 	background: white;
 	color: black;
