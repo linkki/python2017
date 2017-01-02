@@ -147,11 +147,21 @@
            <h2 class="problem"> Ongelma: Käyttäjä syöttää tekstiä kun kysytään lukua</h2>
 
            Kokeile syöttää edellisen tehtävän ohjelmaasi tekstiä luvun sijaan. Mitä tapahtuu? Korjaus ongelmaan on kysyä käyttäjältä <i> merkkijonoa </i>, ja
-           muuntaa se sen jälkeen luvuksi, jos se on luku.
+           muuntaa se sen jälkeen luvuksi, jos se on luku. Seuraava koodi kysyy käyttäjältä syötettä merkkijonona. syöte.isnumeric() tarkistaa, onko syöte mahdollista muuttaa luvuksi.
+           isnumeric() -käsky palauttaa totuusarvona tiedon, onko muuttuja jolle sitä kutsuttiin, mahdollista muuttaa luvuksi vai ei. Jos syöte on luku, int(syöte) muuntaa syötteen luvuksi.
 
+         </br> </br>
+         <code>
+           syöte = input("Anna syöte: ")
+         </br> if syöte.isnumeric():
+        </br> &emsp; &emsp;syöte = int(syöte)
+          </br> print(syöte)
+
+         </code>  </br> </br>
            <h2> </h2>
 
-
+           <h2> Tehtävä 4: Lopetuskäskyksi merkkijono </h2>
+           Muuta ylläolevaa koodia apuna käyttäen tehtävän 3 ohjelmasi hyväksymään lopetussyötteenä sekä -1 että merkkijono "lopeta".
            <h2> Toistolause while ehto </h2>
 
               </div>
