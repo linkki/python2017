@@ -89,11 +89,22 @@
              Aja koodi joko Run -> Run 'laskin' -valikosta tai vihreästä kolmiosta painamalla. Ohjelman pitäisi tulostaa "Hei maailma". Tulostuksen pitäisi Pycharm-editorissa näyttää tältä:
            </br></br>
              <img src="assets/img/heimaailma.png" alt="tulostus Hei maailma" />
-           </br>
+           </br></br>
+
+           Tulostamista Pythonissa voi ajatella hieman samankaltaisena asiana kuin Scratchissa sanomista. Pythonissa ei lähtökohtaisesti ole hahmoja kuten Scratchissa, pelihahmojen luonti vaatii monimutkaisempia komentoja joita opetellaan vasta myöhemmin.
+           Tulostaminen tarkoittaa siis sitä, että ohjelma itse sanoo ulkopuolelleen jotain.
+         </br></br>
+           <img src="assets/img/scratch_heimaailma.png" alt="Scratch Hei maailma" />
+         </br>
 
            <h2>Muuttujat </h2>
-           Pythonissa tieto talletetaan muuttujiin. Python on <i>dynaamisesti tyypitetty</i> ohjelmointikieli. Se tarkoittaa sitä, että yhteen muuttujaan
-           voi tallettaa monenlaisia arvoja. Allaolevan esimerkin ensimmäisellä rivillä talletetaan muuttujaan x <i>luku</i> ja toisella rivillä talletetaan muuttujaan paikka <i>merkkijono</i>.
+           Pythonissa tieto talletetaan muuttujiin. Scratchissa muuttujien alkuarvo on 0, mutta Pythonissa muuttujalle asetetaan arvo heti sitä luodessa. Seuraava koodi asettaa aiemmin luoduille Scratch-muuttujille
+           <i>x</i> ja <i>paikka</i> arvot.
+
+         </br></br>
+          <img src="assets/img/scratch_muuttujat.png" /> </br></br>
+
+           Pythonissa muuttujat voivat saada monentyyppisiä arvoja. Allaolevan esimerkin ensimmäisellä rivillä talletetaan muuttujaan x <i>luku</i> ja toisella rivillä talletetaan muuttujaan paikka <i>merkkijono</i>.
            <i>Merkkijono</i> tarkoittaa tekstiä, ja merkkijonon tunnistaa ympärillä olevista lainausmerkeistä. Esimerkiksi "kissa" on merkkijono.
           </br></br>
            <img src="assets/img/muuttuja.png" /> </br>
@@ -110,7 +121,10 @@
            <h2>Laskutoimitukset</h2>
 
            Tietokone osaa tehdä laskutoimituksia Python-koodin antamien ohjeiden mukaisesti. Harjoitellaan nyt tekemään yhteen-, kerto- ja vähennyslaskuja Pythonilla.
-           Seuraava koodinpätkä tulostaa lukujen 1 ja 4 summan.
+           Seuraavaksi ensin Scratch-versio lukujen 1 ja 4 summan sanomisesta, sitten Pythonilla saman tulostamisesta.
+
+         </br></br>
+         <img src="assets/img/scratch_summa.png" alt="Scratch summa 1+4"/>  </br>
 
          </br>
          <img src="assets/img/yhteenlasku.png" alt="print(1 + 4)"/>
@@ -161,7 +175,11 @@ print(summa)
       <h2> Esimerkki ehdollisuudesta: Itseisarvo </h2>
 
       Otetaan esimerkiksi ohjelma, joka kysyy käyttäjältä lukua ja tulostaa
-      sen itseisarvon. Itseisarvo tarkoittaa luvun etäisyyttä nollaan. Positiivisilla luvuilla itseisarvo on siis luku itse, ja negatiivisilla luvuilla itseisarvo on -1 * luku.
+      sen itseisarvon. Itseisarvo tarkoittaa luvun etäisyyttä nollaan. Positiivisilla luvuilla itseisarvo on siis luku itse, ja negatiivisilla luvuilla itseisarvo on -1 * luku. Seuraavaksi ensin Scratch-esimerkki itseisarvon laskemista muuttujalle
+      nimeltään luku, sitten Python-esimerkki jossa ensin kysytään luku käyttäjältä.
+
+    </br>  </br>
+     <img src="assets/img/scratch_itseisarvo.png" /> </br>
 
     </br></br>
 <pre>
@@ -174,7 +192,7 @@ else:
 
       <br>
 
-      Ylläoleva ohjelma toimii siis niin, että ensimmäisellä rivillä kysytään käyttäjältä syöte ja tallennetaan se muuttujaan luku.
+      Ylläoleva Python-ohjelma toimii siis niin, että ensimmäisellä rivillä kysytään käyttäjältä syöte ja tallennetaan se muuttujaan luku.
       Toisella rivillä määritetään ehto: jos luku on pienempi kuin 0, siirrytään seuraavalle riville. Jos luku ei ole pienempi kuin 0
       (eli on 0 tai suurempi kuin 0), siirrytään suoraan else-lohkoon eli viidennelle riville. Kopioi ylläoleva ohjelma ja kokeile sitä
       sekä positiivisilla että negatiivisilla luvuilla. Tulet tarvitsemaan sitä pohjaksi seuraavaan tehtävään.
