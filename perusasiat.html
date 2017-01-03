@@ -44,7 +44,7 @@
                     <li><a href="perusasiat.html">Perusasiat</a></li>
                     <li><a href="rakenteita.html">Lisää rakenteita</a></li>
                     <li><a href="funktiot.html">Funktiot</a></li>
-                    <li><a href="perusasiat.html">Oma peli</a></li>
+                    <li><a href="kohtipelia.html">Kohti peliä</a></li>
                 </ul>
             </div>
 
@@ -74,7 +74,6 @@
             <div class="row">
               <div class="">
 
-                <h1> TODO: int(, 10) -> int() </h1>
                 Nyt sinulla pitäisi olla asennettuna Python, Pygame ja Pycharm (tai jokin muu tekstieditori Pycharmin tilalla).
                 Tässä osiossa opetellaan Pythonin alkeet: tulostus, muuttujien käyttäminen, syötteen kysyminen käyttäjältä sekä ehtolauseet.
               </br></br>
@@ -129,17 +128,27 @@
          lukua ja tietokone voisi laskea esimerkiksi niiden yhteenlaskun. Näin pääsisimme lähemmäksi osion lopullista tavoitettamme, laskimen koodaamista. Seuraava koodi kysyy käyttäjältä kaksi lukua,
          asettaa ne muuttujiin x ja y, sekä tulostaa niiden summan. Kirjoita seuraava koodi tekstieditoriin, aja se ja testaa ohjelmaa.
 
-       </br></br> <img src="assets/img/lukujen_kysyminen.png" alt="x = int(input("Anna ensimmäinen luku: "), 10) &#10; y = int(input("Anna toinen luku: "), 10)
-        &#10; summa = x + y &#10; print(summa)" />
+</br></br>
+<pre>
+x = int(input("Anna ensimmäinen luku: "))
+y = int(input("Anna toinen luku: "))
+summa = x + y
+print(summa)
+</pre>
 
-       <br> Ylläoleva koodi näyttää monimutkaiselta siksi, että se kysyy lukuja eikä tekstiä. Poista nyt lukujen kysymisistä int( ,10) -ympärykset siten että koodisi näyttää sen jälkeen tältä:
-     </br></br> <img src="assets/img/lukujen_kysyminen_stringeina.png" alt="x = input("Anna ensimmäinen luku: ") &#10;
-     y = input("Anna toinen luku: ") &#10;
-     summa = x + y &#10; print(summa)"/>
+       <br> Ylläoleva koodi näyttää monimutkaiselta siksi, että se kysyy lukuja eikä tekstiä. Poista nyt lukujen kysymisistä int( ) -ympärykset siten että koodisi näyttää sen jälkeen tältä:
+
+     </br></br>
+<pre>
+x = input("Anna ensimmäinen luku: ")
+y = input("Anna toinen luku: ")
+summa = x + y
+print(summa)
+</pre>
 
    </br> Testaa ohjelmaa. Mitä tulokselle käy, onko tulos oikein? Mistä arvelet sen johtuvan?
- </br> Vastaus on, että int( ,10) -koodilla ympäröity käyttäjältä luvun kysyminen kohtelee kysyttyä lukua <i>lukuna</i>, kun taas ilman
-    int( ,10) -ympäryksiä oleva input-käsky kohtelee kysyttyä lukua <i>merkkijonona</i>. Ensimmäisessä esimerkissä siis lukujen yhteenlasku lasketaan oikein,
+ </br> Vastaus on, että int( ) -koodilla ympäröity käyttäjältä luvun kysyminen kohtelee kysyttyä lukua <i>lukuna</i>, kun taas ilman
+    int( ) -ympäryksiä oleva input-käsky kohtelee kysyttyä lukua <i>merkkijonona</i>. Ensimmäisessä esimerkissä siis lukujen yhteenlasku lasketaan oikein,
     toisessa esimerkissä vain yhdistetään kysytyt luvut niin että esimerkiksi luvuista 1 ja 2 tulisi tulokseksi "12".
 
       <h2>Tehtävä 5: Tulosta käyttäjältä kysyttyjen lukujen osamäärä </h2>
@@ -154,11 +163,14 @@
       Otetaan esimerkiksi ohjelma, joka kysyy käyttäjältä lukua ja tulostaa
       sen itseisarvon. Itseisarvo tarkoittaa luvun etäisyyttä nollaan. Positiivisilla luvuilla itseisarvo on siis luku itse, ja negatiivisilla luvuilla itseisarvo on -1 * luku.
 
-    </br></br> <img src="assets/img/itseisarvo.png" alt="luku = int(input("Anna luku jonka itseisarvon haluat tietää: "), 10)
-     &#10; if luku < 0:
-     &#10; &emsp;&emsp; print(-1 * luku)
-     &#10; else:
-      &#10; &emsp;&emsp; print(luku)" />
+    </br></br>
+<pre>
+luku = int(input("Anna luku jonka itseisarvon haluat tietää: "))
+if luku < 0:
+    print(-1 * luku)
+else:
+    print(luku)
+</pre>
 
       <br>
 
@@ -228,15 +240,19 @@
       Seuraavan ehdon tunnussana <i>elif</i> on lyhenne sanoista <i>else if</i> ja tarkoittaa suomeksi <i> muuten jos </i>. Elif -ehtoihin mennään, jos ensimmäinen if-ehto ei toteudu.
       Elif-ehdot käydään läpi järjestyksessä ja heti jos yksikin ehto toteutuu, sen sisällä oleva ohjelmapätkä suoritetaan ja tässä esimerkissä ohjelman suoritus lopetetaan. Mikäli
       yksikään elif-ehdoista ei toteudu, suoritetaan else-lohkon sisällä oleva koodi.
-    </br></br> <img src="assets/img/tarkemmatvuodet.png" alt="luku = int(input('Anna vuosi: '), 10)
-     &#10; if luku >= 2017:
-     &#10; &emsp; print('Vuosi ei ole vielä mennyt.')
-     &#10; elif luku < 1900:
-     &#10; &emsp; print('Vuosi on 1800-luvulla tai aiemmin.')
-     &#10; elif luku < 2000:
-     &#10; &emsp; print('Vuosi on 1900-luvulla')
-     &#10; else:
-     &#10; &emsp; print('Vuosi on 2000-luvulla')" />
+    </br></br>
+
+<pre>
+luku = int(input('Anna vuosi: '))
+if luku >= 2017:
+    print('Vuosi ei ole vielä mennyt.')
+elif luku < 1900:
+    print('Vuosi on 1800-luvulla tai aiemmin.')
+elif luku < 2000:
+    print('Vuosi on 1900-luvulla')
+else:
+    print('Vuosi on 2000-luvulla')
+</pre>
 
       <br>
 
@@ -333,7 +349,7 @@
       Seuraavan ohjelman avulla voi selvittää, tarvitseeko lastenlipun Helsingin paikallisbusseissa.
     </br></br>
     <code>
-      ikä = int(input("Anna ikäsi: "), 10)
+      ikä = int(input("Anna ikäsi: "))
     </br>if ikä >= 7 and ikä <= 16:
     </br> &emsp;&emsp; print("Tarvitset lastenlipun")
     </br>else:
