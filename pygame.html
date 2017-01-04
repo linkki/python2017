@@ -396,6 +396,53 @@ Tämä tuo hahmo.py -tiedostosta kaiken koodin saataville alkuperäiseen tiedost
 </br>
 </br> 4. Testaa että ohjelma toimii kuten aiemminkin.
 
+<h2> Kontrollit </h2>
+Muistamme Scratchista seuraavan kontrollin:
+
+</br></br>
+ <img src="assets/img/scratch_nappainkontrolli.png" /> </br></br>
+
+Nyt opitaan miten sama toiminnallisuus toteutetaan Pythonilla. Jäsennellään ensin edellisen tehtävän koodiamme kontrolli-funktioon
+sekä piirtaminen-funktioon seuraavasti (kopioi koodi itsellesi):
+
+</br></br>
+<pre>
+
+import pygame
+from hahmo import *
+
+naytto = pygame.display.set_mode((640, 400))
+pygame.display.set_caption("Piirtäminen")
+
+kissahahmo = Hahmo("cat.png", 100, 100)
+hahmot = []
+hahmot.append(kissahahmo)
+
+def piirtaminen(hahmot):
+    naytto.fill((0, 0, 0))
+    kissahahmo = hahmot[0]
+    kuva = pygame.image.load(kissahahmo.haeKuvatiedosto()).convert()
+    naytto.blit(kuva, (kissahahmo.haeX(), kissahahmo.haeY()))
+    pygame.display.flip()
+
+def kontrolli(hahmot, tapahtuma):
+
+
+def main():
+    while True:
+        tapahtuma = pygame.event.poll()
+        if tapahtuma.type == pygame.QUIT:
+            break
+        kontrolli(hahmot, tapahtuma)
+        piirtaminen(hahmot)
+
+
+main()
+</pre>
+
+Koodi ei kuitenkaan vielä toimi, sillä kontrolli-funktio on tyhjä. Pysähdytään kuitenkin nyt hetkeksi tutkimaan, mitä uusi koodi tekee.
+
+
               </div>
             </div>
         </div>
