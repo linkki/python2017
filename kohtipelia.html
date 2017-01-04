@@ -194,6 +194,362 @@ Pihla, 50
 </pre>
 
 
+		<h2 id="olio_ohjelmointi">Olio-ohjelmointi</h2>
+
+		<p>Pieni johdanto olio-ohjelmointiin ennen aloitusta.</p>
+
+		<p>Proseduraalisessa ohjelmoinnissa, eli tähän asti opiskelemassamme ohjelmointityylissä ohjelma jäsennellään jakamalla se pienempiin osiin, eli funktioihin.  Funktio toimii ohjelman erillisenä osana, ja sitä voi kutsua mistä tahansa ohjelmasta.  Funktiota kutsuttaessa ohjelman suoritus siirtyy funktion alkuun, ja suorituksen päätyttyä palataan takaisin siihen kohtaan mistä funktiota kutsuttiin.</p>
+
+		<p>Olio-ohjelmoinnissa, kuten proseduraalisessa ohjelmoinnissa, pyritään jakamaan ohjelma pieniin osiin.  Olio-ohjelmoinnissa pienet osat ovat olioita.  Jokaisella oliolla on oma yksittäinen vastuunsa -- eli se sisältää joukon yhteenkuuluvaa tietoa ja toiminnallisuutta.  Olio-ohjelmat koostuvat useista olioista, joiden yhteinen toiminta määrittelee järjestelmän toiminnan.</p>
+
+<h3>Olio</h3>
+
+<p>Olemme jo käyttäneet monia valmiita olioita. Esimerkiksi listat ovat olioita. Jokainen yksittäinen lista koostuu yhteenkuuluvasta tiedosta, eli <i>olion tilasta</i> ja listaolioihin liittyy toiminnallisuutta, eli metodt joilla voidaan muutella olion tilaa. Metodit ovat kuin funktioita, mutta ne liittyvät aina tiettyyn olioon. Esim. seuraavassa ohjelmanpätkässä on kaksi lista-olioa <code>kaupungit</code> ja <code>maat</code>:</p>
+
+
+<pre class="sh_python">
+kaupungit = []
+maat = []
+
+maat.append("Suomi")
+maat.append("Saksa")
+maat.append("Hollanti")
+
+kaupungit.append("Berliini")
+kaupungit.append("Nijmegen")
+kaupungit.append("Turku")
+kaupungit.append("Helsinki")
+
+print("maita " + str(len(kaupungit)))
+print("kaupunkeja " + str(len(kaupungit)))
+</pre>
+
+<p>Molemmat olioista, <code>maat</code> ja <code>kaupungit</code> elävät omaa elämäänsä, molempien "tila" on toisten olioiden tilasta riippumaton. Esim. olion <code>maat</code> tila koostuu listalla olevista merkkijonoista "Suomi", "Saksa" ja "Hollanti" ja todennäköisesti myös tiedosta kuinka monta maata listalla on. </p>
+
+<p>Olioon liittyvää metodia kutsuttaessa tulee pisteen vasemmalle puolelle sen olion nimi, jolle metodia kutsutaan. Eli kun lisätään listalle <code>maat</code> uusi merkkijono, kutsu on muotoa <code>maat.append("merkkijono")</code> eli kutsutaan <code>maat</code> oliolle sen metodia <code>append</code>. Metodin mahdollisesti palauttama tulos riippuu olion <code>maat</code> tilasta, eli muut listat kuten <code>kaupungit</code> eivät vaikuta metodin suoritukseen millään tavalla.</p>
+
+<h3>Luokka</h3>
+
+<p> Kaikki oliot eivät ole keskenään samanlaisia. Jos esimerkiksi tekisimme Talo-olion ja Ihminen -olion, ne koodattaisiin toteuttamaan eri asioita. </p>
+<p>Tietyn olioryhmän tyyppiä kutsutaan <b>luokaksi</b>, eli <code>lista (list)</code> on luokka, <code>merkkijono (str)</code> on luokka, jne...</p>
+
+<p>Tiettyn luokan kaikilla olioilla on samat metodit, sekä samankaltainen tila. Esim. kaikkien listojen tila koostuu listalle talletetuista alkioista. Merkkijono-olioiden tila taas koostuu merkkijonon muodostavista kirjaimista.</p>
+
+<h3>Luokka ja sen oliot</h3>
+
+<p><b>Luokka siis määrittelee</b> minkälaisia luokan oliot ovat:</p>
+<ul>
+<li><b>mitä metodeita olioilla on</b></li>
+<li><b>minkälainen olioiden tila on</b> tai toisinsanoen mitä ominaisuuksia olioilla on</li>
+</ul>
+<p>voidaan ajatella, että luokka kuvaa sen olioiden "rakennuspiirustukset".</p>
+
+<p>Otetaan analogia peleistä, pelihahmoista. Voidaan ajatella, että samassa pelissä tietyntyyppisillä pelihahmoilla, esim. Ihminen-hahmoilla on yhteisiä piirteitä, jotka vaihtelevat hahmokohtaisesti. Yhteiset piirteet määritellään luokassa, ja ne määrittelevät mitä hahmo voi tehdä:</p>
+
+<p>Yksittäiset oliot eli hahmot on tehty kaikki samojen piirustusten perusteella, eli ne kuuluvat samaan luokkaan. Yksittäisten olioiden tila eli ominaisuudet (esim. nopeus, väri, nimi, taidot, asuinpaikka...) vaihtelevat. </p>
+
+
+<h3>Oman luokan määritteleminen - oliomuuttujat</h3>
+
+<p>Yleensä luokka määritellään jotain mielekästä kokonaisuutta varten. Joskus "mielekäs kokonaisuus" voi esim. kuvata jotain reaalimaailman asiaa. Jos tietokoneohjelman pitää käsitellä henkilötietoja, voisi olla mielekästä määritellä erillinen luokka  <code>Henkilo</code> joka kokoaa yhteen henkilöön liittyvät metodit ja ominaisuudet.</p>
+
+<p>Aloitetaan.</p>
+
+<pre class="sh_python">
+
+print("Hei maailma.")
+</pre>
+
+<p>Luomme nyt ohjelmaamme uuden luokan nimeltä <code>Henkilo</code>. Luokka on tässä esimerkissä samassa lähdekooditiedostossa, mutta siirrämme sen myöhemmin erilliseen lähdekooditiedostoon.</p>
+
+
+<pre class="sh_python">
+class Henkilo:
+
+    def kerro(self):
+        return "Hei!"
+
+
+print("Hei maailma.")
+arto = Henkilo()
+print("Mitä kertoo?: " + arto.kerro())
+</pre>
+
+<pre>
+Hei maailma.
+Kertomus: Hei!
+</pre>
+
+<p>Luokan määrittely aloitetaan sanomalla <code>class</code> jota seuraa luokan nimi (esimerkissämme <code>Henkilo</code>). Luokan määrittely aloittaa uuden koodilohkon, joten asetamme kaksoispisteen määrittelyn perään. Jokaisella luokalla täytyy olla määrittely, eli jotain sisältöä. Määrittelimme luokalle <code>Henkilo</code> metodin <code>kerro</code>, joka palauttaa merkkijonon "Hei!". Toisin kuin funktiot, metodeille annetaan aina parametreina vähintään arvo <code>self</code>, joka on viittaus juuri luotavaan olioon.</p>
+
+<p>Luokka siis määrittelee mitä metodeja ja ominaisuuksia luokan olioilla on. Päätetään, että jokaisella henkilöllä on nimi ja ikä. Nimi on luonnollista esittää merkkijonona, ja ikä taas kokonaislukuna. Lisätään nämä rakennuspiirustuksiimme siten, että niillä on aluksi jo joku arvo:</p>
+
+<pre class="sh_python">
+class Henkilo:
+    nimi = "arto"
+    ika = 5
+
+    def kerro(self):
+        return "Hei!"
+</pre>
+
+<p>Eli määrittelimme tässä että kaikilla <code>Henkilo</code>-luokan olioilla on <code>nimi</code> ja <code>ika</code>. Määrittely tapahtuu hiukan kuten normaalin muuttujan määrittely.</p>
+
+<p>Luokan sisälle määriteltyjä muuttujia kutsutaan <i>oliomuuttujiksi</i> tai <i>olion kentiksi</i> tai <i>olion attribuuteiksi</i>. Rakkaalla lapsella on monta nimeä.</p>
+
+<p>Eli olemme määritelleet että kaikilla henkilöolioilla on muuttujat <code>nimi</code> ja <code>ika</code>, eli henkilöiden "tila" koostuu niiden nimestä ja iästä.</p>
+
+<p>Muutetaan vielä Henkilöä siten, että se kertoo nimensä ja ikänsä.</p>
+
+<pre class="sh_python">
+class Henkilo:
+    nimi = "arto"
+    ika = 5
+
+    def kerro(self):
+        return "Hei! Olen " + self.nimi + " ja ikäni on " + str(self.ika)
+
+
+print("Hei maailma.")
+arto = Henkilo()
+
+print("Mitä kertoo?: " + arto.kerro())
+</pre>
+
+<pre>
+Hei maailma.
+Mitä kertoo?: Hei! Olen arto ja ikäni on 5
+</pre>
+
+<p>Huomaa miten self-viitettä, eli viitettä <em>itseen</em> käytetään metodissa kerro. Luokasta <code>Henkilo</code> voi olla luotuna useita olioita samaan aikaan, jolloin viite <code>self</code> kertoo että kyseessä on juuri tämän olion sisäiset muuttujat eivätkä mitkään muut.</p>
+
+
+<h3>Oman luokan määritteleminen - konstruktori eli tilan alustus</h3>
+
+<p>Yleensä luotavalle oliolle halutaan asettaa luontivaiheessa jokin alkutila. Oliot siis luodaan komennolla <em>LuokanNimi()</em>.
+Olion synnyttämisen yhteydessä olisikin kätevä pystyä antamaan arvo joillekkin olioiden muuttujille. Esim. henkilön synnytyksessä olisi kätevää pystyä antamaan nimi jo syntymähetkellä: </p>
+
+<pre class="sh_python">
+arto = Henkilo("Arto")
+</pre>
+
+<p>Tämä onnistuu määrittelemällä oliolle ns. konstruktori, eli olion
+luontihetkellä suoritettava "metodi". Seuraavassa on määritelty
+Henkilo:lle konstruktori joka asettaa iäksi 0 ja nimeksi parametrina
+saatavan merkkijonon:</p>
+
+<pre class="sh_python">
+class Henkilo:
+    nimi = "arto"
+    ika = 5
+
+    def __init__(self, nimi):
+        self.nimi = nimi
+        self.ika = 0
+
+    def kerro(self):
+        return "Hei! Olen " + self.nimi + " ja ikäni on " + str(self.ika)
+
+arto = Henkilo("Arto")
+print("Mitä kertoo?: " + arto.kerro())
+</pre>
+
+<pre>
+Mitä kertoo?: Hei! Olen Arto ja ikäni on 0
+</pre>
+
+
+
+<p>Konstruktori on siis metodi jonka nimi on <code>__init__</code>. Konstruktorille parametrina tuleva arvo tulee sulkuihin konstruktorin nimen perään. Konstruktorin voi ajatella olevan metodi, jonka python suorittaa kun olio luodaan sanomalla <code>Henkilo("Pekka")</code> Aina kun jostain luokasta luodaan olio, kutsutaan kyseisen luokan konstruktoria. </p>
+
+<p>Muutama huomio: konstruktorin sisällä on komento <code>self.ika = 0</code>. Tässä asetetaan arvo 0 olion sisäiselle muuttujalle <code>ika</code>. Toinen komento <code>self.nimi = nimi</code> taas asettaa olion sisäiselle muuttujalle <code>nimi</code> arvoksi parametrina annetun merkkijonon <code>nimi</code>. Huomaa että ilman määrittelyä <code>self</code> emme tietäisi mihin <code>nimi</code>-muuttujaan parametrina saatu arvo asetetaan.</p>
+
+<p>Vielä yksi huomio: jos ohjelmoija ei tee luokalle ollenkaan konstruktoria, on luokalla ns. oletuskonstruktori, eli konstruktorin joka ei tee mitään. Eli jos konstruktoria ei jostain syystä tarvita, ei sellaista tarvitse ohjelmoida.</p>
+
+<p>Koska konstruktori asettaa oliomuuttujille arvot, voimme ohjelmoida luokan <code>Henkilo</code> jatkossa seuraavasti:</p>
+
+<pre class="sh_python">
+class Henkilo:
+
+    def __init__(self, nimi):
+        self.nimi = nimi
+        self.ika = 0
+
+    def kerro(self):
+        return "Hei! Olen " + self.nimi + " ja ikäni on " + str(self.ika)
+
+    def vanhene(self):
+        self.ika = self.ika + 1
+</pre>
+
+
+<p>Lisätään luokalle vielä kaksi muuttujaa "pituus" ja "paino", jotka kummatkin saavat arvoksi 0.</p>
+
+<pre class="sh_python">
+class Henkilo:
+
+    def __init__(self, nimi):
+        self.nimi = nimi
+        self.ika = 0
+        self.pituus = 0
+        self.paino = 0
+
+    def kerro(self):
+        return "Hei! Olen " + self.nimi + " ja ikäni on " + str(self.ika)
+
+    def vanhene(self):
+        self.ika = self.ika + 1
+</pre>
+
+
+
+<h3>Oman luokan määritteleminen - metodit</h3>
+
+<p>Olemme jo esimerkissämme nähneet <code>Henkilo</code>-olioon liittyviä metodeja. Lisätään <code>Henkilo</code>:lle metodi jonka avulla olio vanhenee vuodella.</p>
+
+<pre class="sh_python">
+class Henkilo:
+
+    def __init__(self, nimi):
+        self.nimi = nimi
+        self.ika = 0
+        self.pituus = 0
+        self.paino = 0
+
+    def kerro(self):
+        return "Hei! Olen " + self.nimi + " ja ikäni on " + str(self.ika)
+
+    def vanhene(self):
+        self.ika = self.ika + 1
+
+
+arto = Henkilo("Arto")
+print("Mitä kertoo?: " + arto.kerro())
+arto.vanhene()
+print("Mitä kertoo?: " + arto.kerro())
+</pre>
+
+<pre>
+Mitä kertoo?: Hei! Olen Arto ja ikäni on 0
+Mitä kertoo?: Hei! Olen Arto ja ikäni on 1
+</pre>
+
+<p>Metodin sisällä on yksi koodirivi joka kasvattaa oliomuuttujan <code>ika</code> arvoa yhdellä.</p>
+
+<p>Luodaan kaksi henkilöä ja pyydetään niitä kertomaan jotain itsestään:</p>
+
+<pre class="sh_python">
+# henkilön määrittely...
+
+pekka = Henkilo("Pekka")
+antti = Henkilo("Antti")
+
+print(pekka.kerro())
+print(antti.kerro())
+
+pekka.vanhene()
+
+print(pekka.kerro())
+print(antti.kerro())
+</pre>
+
+<p>Tulostuu:</p>
+
+<pre>
+Hei! Olen Pekka ja ikäni on 0
+Hei! Olen Antti ja ikäni on 0
+Hei! Olen Pekka ja ikäni on 1
+Hei! Olen Antti ja ikäni on 0
+</pre>
+
+<p>Eli "syntyessään" molemmat oliot ovat nollavuotiaita. Olion <code>pekka</code> metodia <code>vanhene</code> kutsutaan kerran. Kuten tulostus näyttää, tämä saa aikaan sen että Pekan ikä onkin 1 vuosi. Kutsumalla metodia Pekkaa vastaavalle oliolle, siis toisen henkilöolion ikä ei muutu.</p>
+
+<p>Jatketaan ohjelman laajentamista. Tehdään henkilölle metodi jonka avulla voidaan selvittää onko henkilö täysi-ikäinen. Metodi palauttaa joko True tai False:</p>
+
+<pre class="sh_python">
+class Henkilo:
+
+    def __init__(self, nimi):
+        self.nimi = nimi
+        self.ika = 0
+        self.pituus = 0
+        self.paino = 0
+
+    def taysiIkainen(self):
+        if self.ika < 18:
+            return False
+
+        return True
+
+    def kerro(self):
+        return "Hei! Olen " + self.nimi + " ja ikäni on " + str(self.ika)
+
+    def vanhene(self):
+        self.ika = self.ika + 1
+</pre>
+
+<p>Ja testataan:</p>
+
+<pre class="sh_python">
+pekka = Henkilo("Pekka")
+antti = Henkilo("Antti")
+
+for i in range(30):
+    pekka.vanhene()
+
+antti.vanhene()
+
+if pekka.taysiIkainen():
+    print("Täysi-ikäinen: " + pekka.kerro())
+else:
+    print("Alaikäinen: " + pekka.kerro())
+
+
+if antti.taysiIkainen():
+    print("Täysi-ikäinen: " + antti.kerro())
+else:
+    print("Alaikäinen: " + antti.kerro())
+</pre>
+
+<pre>
+Täysi-ikäinen: Hei! Olen Pekka ja ikäni on 30
+Alaikäinen: Hei! Olen Antti ja ikäni on 1
+</pre>
+
+<p>Nyt henkilön pystyy "tulostamaan" ainoastaan siten, että nimen lisäksi tulostuu ikä. On tilanteita, joissa haluamme tietoon pelkän olion nimen. Oliomuuttujiin pääsee pythonissa käsiksi myös suoraan olion kautta .-operaattoria käyttämällä.</p>
+
+<p>Muotoillaan testimme tulostukset toisenlaiseksi:</p>
+
+<pre class="sh_python">
+pekka = Henkilo("Pekka")
+antti = Henkilo("Antti")
+
+for i in range(30):
+    pekka.vanhene()
+
+antti.vanhene()
+
+if pekka.taysiIkainen():
+    print("Täysi-ikäinen: " + pekka.nimi)
+else:
+    print("Alaikäinen: " + pekka.nimi)
+
+
+if antti.taysiIkainen():
+    print("Täysi-ikäinen: " + antti.nimi)
+else:
+    print("Alaikäinen: " + antti.nimi)
+
+</pre>
+
+<p>Tulostus:</p>
+
+<pre>
+Täysi-ikäinen: Pekka
+Alaikäinen: Antti
+</pre>
+
+
 
               </div>
             </div>
