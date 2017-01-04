@@ -45,6 +45,7 @@
                     <li><a href="rakenteita.html">Lisää rakenteita</a></li>
                     <li><a href="funktiot.html">Funktiot</a></li>
                     <li><a href="kohtipelia.html">Kohti peliä</a></li>
+                    <li><a href="pygame.html">Peliohjelmoinnin alkeet</a></li>
                 </ul>
             </div>
 
@@ -76,9 +77,9 @@
 
 		<p>Olemme jo käyttäneet monia erilaisia komentoja: sijoitusta, laskutoimituksia, vertailua, if:iä, for:ia ja whileä. Ruudulle tulostaminen on tehty "komentoa" <code>print</code> käyttäen. Listan pituus tunnistetaan "komennolla" <code>len</code>. Tuttuja ovat myös <code>input</code> ja <code>int</code>.</p>
 
-		<p>Huomaamme, että jälkimmäinen joukko edellä lueteltuja komentoja poikkeaa if:istä, for:ista, while:stä ym. siinä, että komennon perässä on sulut ja joskus sulkujen sisällä komennolle annettava syöte. "Sulkuihin päättyvät" eivät oikeastaan olekaan komentoja vaan <strong>funktioita</strong>.</p>
+		<p>Huomaamme, että jälkimmäinen joukko edellä lueteltuja komentoja poikkeaa if:istä, for:ista, while:stä ym. siinä, että komennon perässä on sulut ja joskus sulkujen sisällä komennolle annettava tieto. "Sulkuihin päättyvät" eivät oikeastaan olekaan komentoja vaan <strong>funktioita</strong>.</p>
 
-		<p>Teknisesti ottaen funktio tarkoittaa koodinpätkää, jota voi kutsua muualta ohjelmakoodista. Koodirivi <code>print("olen metodi!")</code> siis tarkoittaa, että kutsutaan funktiota, joka suorittaa ruudulle tulostamisen. Funktion suorituksen jälkeen palataan siihen kohtaa missä ennen funktiokutsua oltiin menossa. Funktiolle suluissa annettua syötettä kutsutaan <i>funktion parametriksi</i>. </p>
+		<p>Teknisesti ottaen funktio tarkoittaa koodinpätkää, jota voi kutsua muualta ohjelmakoodista. Koodirivi <code>print("olen metodi!")</code> siis tarkoittaa, että kutsutaan funktiota, joka suorittaa ruudulle tulostamisen. Funktion suorituksen jälkeen palataan siihen kohtaa missä ennen funktiokutsua oltiin menossa. Funktiolle suluissa annettua tietoa kutsutaan <i>funktion parametriksi</i>. </p>
 
 		<p>Parametrin lisäksi funktiolla voi olla <i>paluuarvo</i>. Esim. tuttu koodinpätkä:</p>
 
@@ -165,7 +166,7 @@ Terveisiä funktiosta tervehdi!
 Terveisiä funktiosta tervehdi!
 </pre>
 
-		 <p>Tässä siis huomionarvoista on, että koodin suoritus etenee siten, että pääohjelman rivit suoritetaan ylhäältä alas yksi kerrallaan. Koodirivin ollessa funktiokutsu, mennään suorittamaan funktion koodirivit jonka jälkeen palataan siihen kohtaan josta kutsu tapahtui, tai tarkemminottaen funktiokutsun jälkeiseen kohtaan.</p>
+		 <p>Tässä siis huomionarvoista on, että koodin suoritus etenee siten, että pääohjelman rivit suoritetaan ylhäältä alas yksi kerrallaan. Koodirivin ollessa funktiokutsu, mennään suorittamaan funktion koodirivit jonka jälkeen palataan siihen kohtaan josta kutsu tapahtui, tai tarkemmin ottaen funktiokutsun jälkeiseen kohtaan.</p>
 
 		<p>Jatkossa kun esittelemme funktioita, emme erikseen mainitse että niiden täytyy sijaita omalla paikallaan.  Funktioita ei esimerkiksi voi määritellä toisen funktion sisällä.</p>
 
@@ -457,7 +458,7 @@ def tervehdi():
  return
 </pre>
 
-    <p>Arvon palauttavaa funktiota määriteltäessä annetaan funktiossa olevalle <code>return</code>-komennolle palautettava muuttuja. Seuraavassa funktio joka palauttaa aina luvun 10.p>
+    <p>Arvon palauttavaa funktiota määriteltäessä annetaan funktiossa olevalle <code>return</code>-komennolle palautettava muuttuja. Seuraavassa funktio joka palauttaa aina luvun 10.<p>
 
 <pre class="sh_python">
 def palautetaanAinaKymppi():
