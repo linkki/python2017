@@ -142,6 +142,176 @@ def main():
 
 <h2> Piirtäminen </h2>
 
+<h3>Värit</h3>
+
+<p>Tavallinen tapa ilmoittaa väri ohjelmoinnissa on käyttää RGB-merkintää. RGB tulee sanoista "red-green-blue" eli "punainen-vihreä-sininen". Sekoittamalla punaista, vihreää ja sinistä saadaan kaikki värit. Jokaisen värin osan määrä annetaan lukuna väliltä 0&ndash;255.</p>
+
+<p>Esimerkkejä RGB-väreistä:</p>
+
+<ul>
+  <li> musta: (0, 0, 0)</li>
+  <li> valkoinen: (255, 255, 255)</li>
+  <li> punainen: (255, 0, 0)</li>
+  <li> vihreä: (0, 255, 0)</li>
+  <li> sininen: (0, 0, 255)</li>
+  <li> keltainen: (255, 255, 0)</li>
+  <li> tummanharmaa: (100, 100, 100)</li>
+  <li> vaaleanharmaa: (200, 200, 200)</li>
+</ul>
+
+
+<h2>Viiva</h2>
+
+<p>Seuraava koodi näyttää ikkunan, jossa on sininen viiva:</p>
+
+<pre class="sh_python">
+import pygame
+
+naytto = pygame.display.set_mode((640, 400))
+pygame.display.set_caption("Piirtäminen")
+
+def main():
+    while True:
+        tapahtuma = pygame.event.poll()
+        if tapahtuma.type == pygame.QUIT:
+            break
+
+        naytto.fill((0, 0, 0))
+        pygame.draw.line(naytto, (0, 0, 255), (100, 50), (400, 370))
+        pygame.display.flip()
+
+main()
+</pre>
+
+<p>Huomaamme että ohjelmarunko on hyvin samanlainen kuin johdanto-osassa. Tässä olemme lisänneet pääsilmukkaan komennot <code>naytto.fill</code>, <code>pygame.draw.line</code> ja <code>pygame.display.flip</code>. Komento <code>naytto.fill</code> täyttää näytön mustalla värillä. Komento <code>pygame.draw.line</code> taas piirtää viivan, ja se saa <em>parametreina</em> seuraavanlaisia asioita:</p>
+
+<pre>
+pygame.draw.line(naytto, (red, green, blue), (alkux, alkuy), (loppux, loppuy))
+</pre>
+
+<p><em>Parametrit</em> ovat arvoja, joita komennoille voidaan antaa. Yllä olevalle <code>pygame.draw.line</code>-komennolla annetaan parametrina naytto, johon viiva piirretään, piirrettävän viivan väri punaisen, sinisen ja vihreän yhdistelmänä, viivan alkupisteen x- ja y-koordinaatit, sekä viivan loppupisteen x- ja y-koordinaatit.</P>
+
+<p>Näiden lisäksi tarvitaan komento <code>pygame.display.flip</code>, joka näyttää juuri piirretyt asiat näytöllä.</p>
+
+<p>Ohjelman suoritus näyttää seuraavalta:</p>
+
+</br></br>
+ <img src="assets/img/piirtaminen.png" width="500"/> </br>
+
+
+ <h2> Tehtävä 1: Rasti </h2>
+Tee ohjelma joka piirtää seuraavanlaisen kuvion. Väreinä siis sininen ja vihreä.
+
+</br></br>
+ <img src="assets/img/raksi.png" width="500"/> </br>
+
+
+ <h2>Laatikko</h2>
+
+ <p>Seuraava koodi näyttää ikkunan, jossa on punainen laatikko:</p>
+
+ <pre class="sh_python">
+import pygame
+
+naytto = pygame.display.set_mode((640, 400))
+pygame.display.set_caption("Piirtäminen")
+
+def main():
+    while True:
+        tapahtuma = pygame.event.poll()
+        if tapahtuma.type == pygame.QUIT:
+            break
+
+        naytto.fill((0, 0, 0))
+        pygame.draw.rect(naytto, (255, 0, 0), (100, 50, 150, 200))
+        pygame.display.flip()
+
+main()
+ </pre>
+
+ <p>Tässä komento <code>pygame.draw.rect</code> piirtää laatikon. Komennon
+ käyttötapa on seuraava:</p>
+
+ <pre>
+ pygame.draw.rect(naytto, (red, green, blue), (alkux, alkuy, leveys, korkeus))
+ </pre>
+
+ <p>Ohjelman suoritus näyttää seuraavalta:</p>
+
+</br>
+ <img src="assets/img/laatikko.png" width="500"/> </br>
+
+ <h2>Ympyrä</h2>
+
+<p>Seuraava koodi näyttää ikkunan, jossa on keltainen ympyrä:</p>
+
+<pre class="sh_python">
+import pygame
+
+naytto = pygame.display.set_mode((640, 400))
+pygame.display.set_caption("Piirtäminen")
+
+def main():
+    while True:
+        tapahtuma = pygame.event.poll()
+        if tapahtuma.type == pygame.QUIT:
+            break
+
+        naytto.fill((0, 0, 0))
+        pygame.draw.circle(naytto, (255, 255, 0), (350, 150), 40)
+        pygame.display.flip()
+
+main()
+</pre>
+
+<p>Tässä komento <code>pygame.draw.circle</code> piirtää ympyrän. Komennon
+käyttötapa on seuraava:</p>
+
+<pre>
+pygame.draw.circle(naytto, (red, green, blue), (keski-x, keski-y), säde)
+</pre>
+
+<p>Ohjelman suoritus näyttää seuraavalta:</p>
+
+</br>
+ <img src="assets/img/ympyra.png" width="500"/> </br>
+
+ <h2> Kuvan piirtäminen </h2>
+
+ Seuraava koodi näyttää ikkunan, jossa on Scratchista tuttu kissa (kuva Wikimedia Commons). Kuva on cat.png -tiedostossa,
+ ja kuvatiedosto on ja tulee olla <i> samassa kansiossa kooditiedoston kanssa</i>. Vain siten koodi löytää kuvatiedoston.
+
+<pre>
+
+import pygame
+
+naytto = pygame.display.set_mode((640, 400))
+pygame.display.set_caption("Piirtäminen")
+x = 100
+y = 200
+
+def main():
+    while True:
+        tapahtuma = pygame.event.poll()
+        if tapahtuma.type == pygame.QUIT:
+            break
+
+        naytto.fill((0, 0, 0))
+        kuva = pygame.image.load("cat.png").convert()
+        naytto.blit(kuva, (x, y))
+        pygame.display.flip()
+
+main()
+</pre>
+
+</br> Lopputulos näyttää tältä: </br>
+
+</br>
+ <img src="assets/img/kissanaytolla.png" width="500"/> </br>
+
+ <h2> Tehtävä 2: Oma pelihahmo </h2>
+ Piirrä oma pelihahmo ja sijoita se ruudulle kohtaan x = 400, y = 400. Käytä hieman aikaa hahmon piirtämiseen,
+ sillä tulet tarvitsemaan hahmoa myöhemmin peliohjelmointia harjoitellessa. 
               </div>
             </div>
         </div>
