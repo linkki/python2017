@@ -549,6 +549,183 @@ Täysi-ikäinen: Pekka
 Alaikäinen: Antti
 </pre>
 
+<h2> Lukutehtävä 7: Hahmo</h2>
+Seuraavassa koodissa määritellään Hahmo-luokka. Hahmolle annetaan luodessa nimi, nopeus ja väri. Luokan määrittelyn
+jälkeen luodaan hahmo1-niminen hahmo nimellä PeliHahmo, nopeudella 90 ja värillä sininen. Mitä tulostuu koodin viimeisellä
+rivillä? Yritä ensin päätellä koodia lukemalla viimeisen rivin tulostus, jos et keksi sitä niin kopioi koodi editoriisi
+ja aja se. </br></br>
+<pre>
+class Hahmo:
+    def __init__(self, nimi, nopeus, väri):
+        self.nimi = nimi
+        self.ika = 0
+        self.nopeus = nopeus
+        self.väri = väri
+
+    def kerroNopeus(self):
+        return "Hei! Olen " + self.nimi + " ja nopeuteni on " + str(self.nopeus)
+
+    def kiihdytä(self):
+        self.nopeus += 10
+
+    def hidasta(self):
+        self.nopeus -= 10
+
+
+
+hahmo1 = Hahmo("PeliHahmo", 90, "sininen")
+print(hahmo1.kerroNopeus())   #tulostuu 90
+hahmo1.kiihdytä()
+print(hahmo1.kerroNopeus())   #Mitä tulostuu?
+</pre>
+
+</br>
+<h2>Tehtävä 8: Lukutilasto</h2>
+
+
+<h4>Lukujen määrä</h4>
+
+<p>Tee luokka <code>Lukutilasto</code>, joka tuntee seuraavat toiminnot:</p>
+
+<ul>
+<li> metodi <code>lisaaLuku</code> lisää uuden luvun tilastoon
+<li> metodi <code>haeMaara</code> kertoo lisättyjen lukujen määrän
+</ul>
+
+<p>Luokan ei tarvitse tallentaa mihinkään lisättyjä lukuja,
+vaan riittää muistaa niiden määrä.
+Metodin <code>lisaaLuku</code> ei tässä vaiheessa
+tarvitse edes ottaa huomioon,
+mikä luku lisätään tilastoon,
+koska ainoa tallennettava asia on lukujen määrä.</p>
+
+<p>Luokan runko on seuraava:</p>
+
+<pre class="sh_python">
+class Lukutilasto:
+  def __init__(self):
+    self.maara = ...
+
+  def lisaaLuku(self, luku):
+    # kirjoita koodia tähän
+
+  def haeMaara(self):
+    # kirjoita koodia tähän
+</pre>
+
+<p>Seuraava ohjelma esittelee luokan käyttöä:</p>
+
+<pre class="sh_python">
+tilasto = Lukutilasto()
+tilasto.lisaaLuku(3)
+tilasto.lisaaLuku(5)
+tilasto.lisaaLuku(1)
+tilasto.lisaaLuku(2)
+print("Määrä: " + str(tilasto.haeMaara()))
+</pre>
+
+<p>Ohjelman tulostus on seuraava:</p>
+
+<pre>
+Määrä: 4
+</pre>
+
+<h4>Summa ja keskiarvo</h4>
+
+<p>Laajenna luokkaa seuraavilla toiminnoilla:</p>
+
+<ul>
+<li> metodi <code>haeSumma</code> kertoo lisättyjen lukujen summan
+<li> metodi <code>haeKeskiarvo</code> kertoo lisättyjen lukujen keskiarvon
+</ul>
+
+<p>Luokan runko on seuraava:</p>
+
+<pre class="sh_python">
+class Lukutilasto:
+  def __init__(self):
+    self.maara = ...
+    self.summa = ...
+
+  def lisaaLuku(self, luku):
+    # kirjoita koodia tähän
+
+  def haeMaara(self):
+    # kirjoita koodia tähän
+
+  def haeSumma(self):
+    # kirjoita koodia tähän
+
+  def haeKeskiarvo(self):
+    # kirjoita koodia tähän
+</pre>
+
+<p>Seuraava ohjelma esittelee luokan käyttöä:</p>
+
+<pre class="sh_python">
+tilasto = Lukutilasto();
+tilasto.lisaaLuku(3);
+tilasto.lisaaLuku(5);
+tilasto.lisaaLuku(1);
+tilasto.lisaaLuku(2);
+print("Määrä: " + str(tilasto.haeMaara()))
+print("Summa: " + str(tilasto.haeSumma()))
+print("Keskiarvo: " + str(tilasto.haeKeskiarvo()))
+</pre>
+
+<p>Ohjelman tulostus on seuraava:</p>
+
+<pre>
+Määrä: 4
+Summa: 11
+Keskiarvo: 2.75
+</pre>
+
+<h4>Summa käyttäjältä</h4>
+
+<p>Tee ohjelma, joka kysyy lukuja käyttäjältä,
+kunnes käyttäjä antaa luvun -1.
+Sitten ohjelma ilmoittaa lukujen summan.</p>
+
+<p>Käytä ohjelmassa luokkaa <code>Lukutilasto</code>
+summan laskemiseen.</p>
+
+<pre>
+Anna lukuja:
+<font color="red">4</font>
+<font color="red">2</font>
+<font color="red">5</font>
+<font color="red">4</font>
+<font color="red">-1</font>
+Summa: 15
+</pre>
+
+<p>Huom! Kai teit ohjelman siten, että lukujen kysely ei tapahdu luokan <code>Lukutilasto</code> sisältämässä ohjelmakoodissa.</p>
+
+<h4>Kaksi summaa</h4>
+
+<p>Muuta edellistä ohjelmaa niin,
+että ohjelma laskee erikseen
+parillisten ja parittomien
+lukujen summaa.</p>
+
+<p>Määrittele ohjelmassa <i>kaksi</i>
+oliota luokasta <code>Lukutilasto</code>:
+toinen laskee parillisten lukujen summan ja
+toinen laskee parittomien lukujen summan.</p>
+
+<pre>
+Anna lukuja:
+<font color="red">4</font>
+<font color="red">2</font>
+<font color="red">5</font>
+<font color="red">2</font>
+<font color="red">-1</font>
+Parillisten summa: 8
+Parittomien summa: 5
+</pre>
+
+
 
 
               </div>
