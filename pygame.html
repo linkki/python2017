@@ -311,7 +311,91 @@ main()
 
  <h2> Tehtävä 2: Oma pelihahmo </h2>
  Piirrä oma pelihahmo ja sijoita se ruudulle kohtaan x = 400, y = 400. Käytä hieman aikaa hahmon piirtämiseen,
- sillä tulet tarvitsemaan hahmoa myöhemmin peliohjelmointia harjoitellessa. 
+ sillä tulet tarvitsemaan hahmoa myöhemmin peliohjelmointia harjoitellessa.
+
+ <h2> Tehtävä 3: Kuvan piirtävä funktio </h2>
+ Tee funktio <code>piirraKuva</code>, joka ottaa parametrina kuvatiedoston nimen merkkijonona, x-koordinaatin sekä y-koordinaatin,
+ ja piirtää kuvan annettujen tietojen mukaan.
+
+ <h2> Tehtävä 4: Hahmo satunnaiseen sijaintiin </h2>
+ Tee ohjelma, joka sijoittaa hahmon satunnaiseen sijaintiin kentälle piirtämälläsi kuvalla. Ohjelman tulee käyttää edellisen tehtävän
+ <code> piirraKuva </code> -funktiota. Laske hahmon sijainti uudelleen jokaisella <code> while True</code> -silmukan suorituskerralla.
+ Lopputuloksesta huomaat kuinka näyttää siltä että hahmo "liikkuu" paikasta toiseen.
+
+ <h2> Tehtävä 5: Hahmo-olio </h2>
+ Tehdään hahmosta olio. Niin on helpompaa jäsennellä koodia myöhemmin, kun mukaan tulee useita hahmoja. Jokaiseen hahmoon liittyy aluksi
+ kuvatiedosto-, x-, ja y-koordinaatit. Kuvatiedosto tarkoittaa siis tiedostonimeä, x ja y koordinaatteja lukuarvoina.
+ Koodissa aluksi määritellään luokka Hahmo, eli <code> class Hahmo</code>. Sen sisällä on konstruktori sekä funktio haeKuvatiedosto.
+ Luokan jälkeen seuraa varsinainen pygame-koodi. Koodinpätkä <code> kissahahmo = Hahmo("cat.png", 100, 100) </code> luo kissahahmo-nimisen
+ Hahmo-olion kuvatiedostolla "cat.png", x-koordinaatilla 100 ja y-koordinaatilla 100. Rivi <code> kuva = pygame.image.load(kissahahmo.haeKuvatiedosto()).convert() </code>
+ luo kuvan kissahahmo-olion haeKuvatiedosto -funktion palautusta apuna käyttäen.
+</br></br>
+ <b> Tehtävänäsi on koodata Hahmo-luokkaan funktiot haeX ja haeY, ja testata että hahmo piirretään oikeaan kohtaan, sillä
+ rivi <code> naytto.blit(kuva, (kissahahmo.haeX(), kissahahmo.haeY())) </code> käyttää näitä funktioita</b></br></br>
+
+<pre>
+
+import pygame
+
+class Hahmo:
+    def __init__(self, kuvatiedosto, x, y):
+        self.x = x
+        self.y = y
+        self.kuvatiedosto = kuvatiedosto
+
+    def haeKuvatiedosto(self):
+        return self.kuvatiedosto
+
+      #kirjoita tänne haeX- ja haeY -funktiot
+
+
+
+naytto = pygame.display.set_mode((640, 400))
+pygame.display.set_caption("Piirtäminen")
+
+kissahahmo = Hahmo("cat.png", 100, 100)
+
+def main():
+    while True:
+        tapahtuma = pygame.event.poll()
+        if tapahtuma.type == pygame.QUIT:
+            break
+
+        naytto.fill((0, 0, 0))
+
+        kuva = pygame.image.load(kissahahmo.haeKuvatiedosto()).convert()
+        naytto.blit(kuva, (kissahahmo.haeX(), kissahahmo.haeY()))
+        pygame.display.flip()
+
+main()
+
+</pre>
+
+</br>
+Lopputuloksen tulee näyttää tältä:</br>
+
+</br>
+ <img src="assets/img/hahmostaolio.png" width="500"/> </br>
+
+ <h2> Tehtävä 6: Hahmo-luokka omaan tiedostoon </h2>
+ Kun teemme useita luokkia sekä Pygame-koodia, on hyvä että luokat ovat omissa tiedostoissaan. Siirrä Hahmo-luokka omaan tiedostoonsa seuraavia ohjeita noudattaen:
+ </br></br> 1. Luo hahmo.py -niminen tiedosto. </br>
+ </br> 2. Siirrä Hahmo-luokka tiedostoon siten että alkuperäiseen tiedostoosi jää jäljelle ensimmäisiksi riveiksi seuraavat rivit:
+
+<pre>
+import pygame
+
+naytto = pygame.display.set_mode((640, 400))
+</pre> </br>
+3. Lisää alkuperäisen tiedoston josta luokka siirrettiin pois, kahden ensimmäisen rivin väliin koodinpätkä
+
+<pre>
+from hahmo import *
+</pre>
+Tämä tuo hahmo.py -tiedostosta kaiken koodin saataville alkuperäiseen tiedostoomme jossa sijaitsee muut koodimme.
+</br>
+</br> 4. Testaa että ohjelma toimii kuten aiemminkin.
+
               </div>
             </div>
         </div>
