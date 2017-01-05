@@ -430,7 +430,55 @@ Vinkkejä: Sinun täytyy ensin muokata <code>main</code> -funktion <code> hahmot
 myös toiselle hahmolle oman listaelementin. Jos et ole varma mitä hahmot -listasi sisältää ohjelman suorituksessa, kannattaa esimerkiksi
 tulostaa se <code> print(hahmot)</code> -koodilla ennen pelin pääsilmukkaa eli <code> while True</code> -toistolausetta. Kun hahmot-listalla
 on oikea sisältö, myös <code> kontrolli </code> -funktio vaatii muokkausta siten että <i> kaikkien </i> hahmot-listan listaelementtien viimeinen arvo
-asetetaan True:ksi. 
+asetetaan True:ksi.
+
+<h2> Erilaisia näppäimiä </h2>
+Pysähdytään tutkimaan riviä </br></br>
+<pre> if tapahtuma.key == pygame.K_SPACE </pre>
+</br>
+
+<code>tapahtuma.key</code> kertoo, mitä näppäintä käyttäjä painoi. <code> pygame.K_SPACE </code> taas on välilyöntinäppäimen koodi.
+Ehto siis tarkistaa, onko käyttäjän painama näppäin välilyöntinäppäin. Seuraavassa taulukossa on koodeja yleisimmille pelien kontrolleihin
+tarvittaville näppäimille.
+
+<table border="1" style="margin-top: 20px;">
+  <tr>
+    <th>Pygame-koodi</th>
+    <th>näppäin</th>
+  </tr>
+  <tr>
+    <td> K_SPACE  </td>
+    <td> välilyönti </td>
+  </tr>
+  <tr>
+    <td> K_RIGHT </td>
+    <td> oikea nuolinäppäin </td>
+  </tr>
+  <tr>
+    <td> K_LEFT </td>
+    <td> vasen nuolinäppäin </td>
+  </tr>
+  <tr>
+    <td> K_DOWN </td>
+    <td> alaspäin -nuolinäppäin </td>
+  </tr>
+  <tr>
+    <td> K_UP </td>
+    <td> ylöspäin -nuolinäppäin </td>
+  </tr>
+  <tr>
+    <td> K_ESCAPE </td>
+    <td> esc  </td>
+  </tr>
+  <tr>
+    <td> K_0 </td>
+    <td> Numeronäppäin 0. Muut numeronäppäinkoodit ovat samaa muotoa K_numero, eli esimerkiksi K_5. </td>
+  </tr>
+  <tr>
+    <td> K_a </td>
+    <td> Kirjainnäppäin a. Muut kirjainnäppäinkoodit ovat samaamuotoa K_kirjain, eli esimerkiksi K_b. </td>
+  </tr>
+</table>
 
               </div>
             </div>
