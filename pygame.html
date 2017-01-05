@@ -480,6 +480,26 @@ tarvittaville näppäimille.
   </tr>
 </table>
 
+<h2> Tehtävä 6: Päähahmo liikkumaan nuolinäppäimillä </h2>
+Tästä lähtien pelisi päähahmo, tai päähenkilö, on <code> hahmot </code> -listan ensimmäinen hahmo. Tehtävänäsi on toteuttaa
+tälle hahmolle nuolinäppäimillä liikkuminen. Se toteutetaan niin, että <code> kontrolli </code> -funktioon lisätään ehtoja
+eri näppäimille. Seuraavassa koodissa <code> kontrolli </code> -funktioon on lisätty <code> elif </code> -lohko, jossa
+otetaan hahmot-listasta ensimmäinen alkio ja tallennetaan se muuttujaan <code> päähahmo </code>. Päähahmon x-koordinaattia
+kasvatetaan 10:llä. </br></br>
+
+Toteuta <code> kontrolli </code> -funktioosi muut elif-lohkot muille nuolinäppäimille ja testaa että ohjelmasi toimii.
+</br></br>
+<pre>
+def kontrolli(hahmot, tapahtuma):
+    if tapahtuma.type == pygame.KEYDOWN:
+        if tapahtuma.key == pygame.K_ESCAPE:
+            for hahmo in hahmot:
+                hahmo[3] = True
+        elif tapahtuma.key == pygame.K_RIGHT:
+            päähahmo = hahmot[0]
+            päähahmo[1] += 10
+</pre>
+
               </div>
             </div>
         </div>
