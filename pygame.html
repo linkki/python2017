@@ -324,13 +324,14 @@ main()
 
 <h2> Koodin jäsentäminen </h2>
 <code> piirraKuva </code> -funktio ei vielä riitä, että voisimme siirtyä seuraavaan vaiheeseen eli kontrollien ottamiseen mukaan
-peliimme. Kopioi allaoleva koodi itsellesi seuraavan vaiheen pohjaksi.
+peliimme. Jäsennellään nyt koodia niin, että piirtäminen ja kontrollit tapahtuvat kokonaan eri funktioissa. Kopioi allaoleva koodi itsellesi seuraavan vaiheen pohjaksi.
 <code> piirtaminen</code>  -funktio ottaa parametrina muuttujat <code> naytto </code>
 ja <code> hahmot</code>. <code> hahmot </code> taas on lista, joka sisältää listan <code>["cat.png", 100, 100, True]</code>.
 
 <code> piirtaminen </code> -funktiossa käydään läpi jokainen <code> hahmot </code> -listan lista. Tässä tapauksessa <code> for hahmo in hahmot </code> -
-silmukan sisällölle tulee vain yksi toistokerta koska <code> hahmot </code> -lista sisältää vain yhden hahmon. Mikäli hahmolistan neljäs alkio on True,
-hahmo piirretään. 
+silmukan sisällölle tulee vain yksi toistokerta koska <code> hahmot </code> -lista sisältää vain yhden hahmon. Mikäli hahmolistan neljäs alkio on <code>True</code>,
+hahmo piirretään. Neljännen alkion on tarkoitus olla aina joko <code> True </code> tai <code> False </code> sen mukaan, piirretäänkö
+hahmo vai ei.
 
 </br> </br>
 <code> kontrolli </code> -funktiota kutsutaan pelin pääsilmukassa eli <code> while True </code> -lohkossa, mutta tällä hetkellä <section>
