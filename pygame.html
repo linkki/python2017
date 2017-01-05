@@ -322,6 +322,56 @@ main()
  <code> piirraKuva </code> -funktiota. Laske hahmon sijainti uudelleen jokaisella <code> while True</code> -silmukan suorituskerralla.
  Lopputuloksesta huomaat kuinka näyttää siltä että hahmo "liikkuu" paikasta toiseen.
 
+<h2> Koodin jäsentäminen </h2>
+<code> piirraKuva </code> -funktio ei vielä riitä, että voisimme siirtyä seuraavaan vaiheeseen eli kontrollien ottamiseen mukaan
+peliimme. Kopioi allaoleva koodi itsellesi seuraavan vaiheen pohjaksi.
+Tässä koodissa on kaksi uutta asiaa. <code> piirtaminen</code>  -funktio ottaa parametrina muuttujat <code> naytto </code>
+ja <code> hahmot</code>. <code> hahmot </code> taas on lista, joka sisältää listan <code>["cat.png", 100, 100]</code>. <code> hahmot
+</code> on siis lista joka sisältää nyt yhden listan ja tulee myöhemmin sisältämään useita listoja.
+
+</br> </br>
+Funktiossa <code> piirtaminen </code> täytetään ensin <code> naytto </code> mustalla. Sen jälkeen sijoitetaan muuttujaan
+<code> kissahahmo </code> listan <code> hahmot </code> ensimmäinen alkio. <code> kissahahmo </code> -muuttujaan sijoittuu
+siis lista <code> ["cat.png", 100, 100] </code>. Tämän jälkeen piirretään kuva kissahahmo-listasta tarvittavat tiedot hakemalla.
+
+</br> </br>
+<code> kontrolli </code> -funktiota kutsutaan pelin pääsilmukassa eli <code> while True </code> -lohkossa, mutta tällä hetkellä <section>
+  tulostaa vain "Kontrolli".  </br></br>
+</section>
+
+<pre>
+import pygame
+
+naytto = pygame.display.set_mode((640, 400))
+pygame.display.set_caption("Piirtäminen")
+
+
+def piirraKuva(kuvatiedosto, x, y):
+    naytto.blit(kuvatiedosto, (x, y))
+
+def piirtaminen(naytto, hahmot):
+    naytto.fill((0, 0, 0))
+    kissahahmo = hahmot[0]
+    kuva = pygame.image.load(kissahahmo[0]).convert()
+    naytto.blit(kuva, (kissahahmo[1], kissahahmo[2]))
+    pygame.display.flip()
+
+def kontrolli(hahmot, tapahtuma):
+    print("Kontrolli")
+
+def main():
+    kissahahmo = ["cat.png", 100, 100]
+    hahmot = [kissahahmo]
+    while True:
+        tapahtuma = pygame.event.poll()
+        if tapahtuma.type == pygame.QUIT:
+            break
+        kontrolli(hahmot, tapahtuma)
+        piirtaminen(naytto, hahmot)
+
+
+main()
+</pre>
               </div>
             </div>
         </div>
