@@ -325,14 +325,12 @@ main()
 <h2> Koodin jäsentäminen </h2>
 <code> piirraKuva </code> -funktio ei vielä riitä, että voisimme siirtyä seuraavaan vaiheeseen eli kontrollien ottamiseen mukaan
 peliimme. Kopioi allaoleva koodi itsellesi seuraavan vaiheen pohjaksi.
-Tässä koodissa on kaksi uutta asiaa. <code> piirtaminen</code>  -funktio ottaa parametrina muuttujat <code> naytto </code>
-ja <code> hahmot</code>. <code> hahmot </code> taas on lista, joka sisältää listan <code>["cat.png", 100, 100]</code>. <code> hahmot
-</code> on siis lista joka sisältää nyt yhden listan ja tulee myöhemmin sisältämään useita listoja.
+<code> piirtaminen</code>  -funktio ottaa parametrina muuttujat <code> naytto </code>
+ja <code> hahmot</code>. <code> hahmot </code> taas on lista, joka sisältää listan <code>["cat.png", 100, 100, True]</code>.
 
-</br> </br>
-Funktiossa <code> piirtaminen </code> täytetään ensin <code> naytto </code> mustalla. Sen jälkeen sijoitetaan muuttujaan
-<code> kissahahmo </code> listan <code> hahmot </code> ensimmäinen alkio. <code> kissahahmo </code> -muuttujaan sijoittuu
-siis lista <code> ["cat.png", 100, 100] </code>. Tämän jälkeen piirretään kuva kissahahmo-listasta tarvittavat tiedot hakemalla.
+<code> piirtaminen </code> -funktiossa käydään läpi jokainen <code> hahmot </code> -listan lista. Tässä tapauksessa <code> for hahmo in hahmot </code> -
+silmukan sisällölle tulee vain yksi toistokerta koska <code> hahmot </code> -lista sisältää vain yhden hahmon. Mikäli hahmolistan neljäs alkio on True,
+hahmo piirretään. 
 
 </br> </br>
 <code> kontrolli </code> -funktiota kutsutaan pelin pääsilmukassa eli <code> while True </code> -lohkossa, mutta tällä hetkellä <section>
@@ -351,16 +349,17 @@ def piirraKuva(kuvatiedosto, x, y):
 
 def piirtaminen(naytto, hahmot):
     naytto.fill((0, 0, 0))
-    kissahahmo = hahmot[0]
-    kuva = pygame.image.load(kissahahmo[0]).convert()
-    naytto.blit(kuva, (kissahahmo[1], kissahahmo[2]))
+    for hahmo in hahmot:
+        if hahmo[3] == True:
+            kuva = pygame.image.load(hahmo[0]).convert()
+            naytto.blit(kuva, (hahmo[1], hahmo[2]))
     pygame.display.flip()
 
 def kontrolli(hahmot, tapahtuma):
     print("Kontrolli")
 
 def main():
-    kissahahmo = ["cat.png", 100, 100]
+    kissahahmo = ["cat.png", 100, 100, True]
     hahmot = [kissahahmo]
     while True:
         tapahtuma = pygame.event.poll()
