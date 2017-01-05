@@ -324,7 +324,7 @@ main()
 
 <h2> Koodin jäsentäminen </h2>
 <code> piirraKuva </code> -funktio ei vielä riitä, että voisimme siirtyä seuraavaan vaiheeseen eli kontrollien ottamiseen mukaan
-peliimme. Jäsennellään nyt koodia niin, että piirtäminen ja kontrollit tapahtuvat kokonaan eri funktioissa. Kopioi allaoleva koodi itsellesi seuraavan vaiheen pohjaksi.
+peliimme. Jäsennellään nyt koodia niin, että piirtäminen ja kontrollit tapahtuvat kokonaan eri funktioissa. Kopioi allaoleva koodi itsellesi seuraavan vaiheen pohjaksi, mutta vaihda kuvatiedostonimen tilalle oman hahmosi tiedostonimi.
 <code> piirtaminen</code>  -funktio ottaa parametrina muuttujat <code> naytto </code>
 ja <code> hahmot</code>. <code> hahmot </code> taas on lista, joka sisältää listan <code>["cat.png", 100, 100, True]</code>. Listan ensimmäinen alkio
 on kuvatiedoston nimi, toinen alkio x-koordinaatti ja kolmas alkio y-koordinaatti. Neljännen alkion on tarkoitus olla aina joko <code> True </code> tai <code> False </code> sen mukaan, piirretäänkö
@@ -337,6 +337,7 @@ hahmo piirretään.
 </br> </br>
 <code> kontrolli </code> -funktiota kutsutaan pelin pääsilmukassa eli <code> while True </code> -lohkossa, mutta tällä hetkellä <section>
   tulostaa vain "Kontrolli".  </br></br>
+
 </section>
 
 <pre>
@@ -373,6 +374,64 @@ def main():
 
 main()
 </pre>
+
+<h2> Kontrolli </h2>
+Muistat ehkä Scratchista kontrollit. Seuraavassa muistutus:
+
+</br></br>
+ <img src="assets/img/scratch_nappainkontrolli.png" /> </br></br>
+
+ Seuraavaksi toteutamme toiminnallisuuden, jolla pelihahmo ilmestyy näytölle vasta kun painetaan välilyöntiä. Kopioi seuraava koodi, mutta lue se tarkasti, sillä seuraavassa tehtävässä sinulla pitää olla ymmärrystä mitä kontrollikoodi tekee.
+
+</br></br>
+<pre>
+import pygame
+
+naytto = pygame.display.set_mode((640, 400))
+pygame.display.set_caption("Piirtäminen")
+
+
+def piirraKuva(kuvatiedosto, x, y):
+    naytto.blit(kuvatiedosto, (x, y))
+
+def piirtaminen(naytto, hahmot):
+    naytto.fill((0, 0, 0))
+    for hahmo in hahmot:
+        if hahmo[3] == True:
+            kuva = pygame.image.load(hahmo[0]).convert()
+            naytto.blit(kuva, (hahmo[1], hahmo[2]))
+    pygame.display.flip()
+
+def kontrolli(hahmot, tapahtuma):
+    if tapahtuma.type == pygame.KEYDOWN:
+        if tapahtuma.key == pygame.K_SPACE:
+            hahmot[0][3] = True
+
+def main():
+    kissahahmo = ["cat.png", 100, 100, False]
+    hahmot = [kissahahmo]
+    while True:
+        tapahtuma = pygame.event.poll()
+        if tapahtuma.type == pygame.QUIT:
+            break
+        kontrolli(hahmot, tapahtuma)
+        piirtaminen(naytto, hahmot)
+
+
+main()
+</pre>
+
+<h2> Tehtävä 5: Kaksi hahmoa </h2>
+Piirrä toinen hahmo ja lisää sen piirtäminen haluamaasi sijaintiin koodiisi. Ohjelman tulee toimia niin, että alussa
+näyttö on musta, ja kun painetaan välilyöntiä niin molemmat hahmot ilmestyvät näytölle.
+
+</br> </br>
+Vinkkejä: Sinun täytyy ensin muokata <code>main</code> -funktion <code> hahmot </code> -listaa siten että se sisältää
+myös toiselle hahmolle oman listaelementin. Jos et ole varma mitä hahmot -listasi sisältää ohjelman suorituksessa, kannattaa esimerkiksi
+tulostaa se <code> print(hahmot)</code> -koodilla ennen pelin pääsilmukkaa eli <code> while True</code> -toistolausetta. Kun hahmot-listalla
+on oikea sisältö, myös <code> kontrolli </code> -funktio vaatii muokkausta siten että <i> kaikkien </i> hahmot-listan listaelementtien viimeinen arvo
+asetetaan True:ksi. 
+
               </div>
             </div>
         </div>
