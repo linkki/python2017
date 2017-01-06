@@ -385,7 +385,7 @@ Muistat ehkä Scratchista kontrollit. Seuraavassa muistutus:
  Seuraavaksi toteutamme toiminnallisuuden, jolla pelihahmo ilmestyy näytölle vasta kun painetaan välilyöntiä. Kopioi seuraava koodi, mutta lue se tarkasti, sillä seuraavassa tehtävässä sinulla pitää olla ymmärrystä mitä kontrollikoodi tekee.
 
 </br></br>
-<pre>
+<pre id="kontrolli">
 import pygame
 
 naytto = pygame.display.set_mode((640, 400))
@@ -510,7 +510,7 @@ joten tehtävänä on nyt koodata tarkistukset, joiden avulla ei ole mahdollista
 Vinkki: Tarvitset tarkistuksissa sekä koko näytön pituutta sekä leveyttä. Kuvan sijainti määrittyy Pygamessa kuvan vasemman yläkulman mukaan.
 Siispä tulet huomaamaan, että jos esimerkiksi pienimpänä mahdollisena x-koordinaattina 0 ja suurimpana mahdollisena x-koordinaattina 640 (eli näytön leveys),
 vasemmalle mentäessä hahmo pysähtyy näkyviin näytölle ja oikealle mennessä se menee näytön yli ja pysähtyy vasta ikkunan ulkopuolelle. Tämä ei kuitenkaan
-haittaa kunhan hahmo pysähtyy. Muista käyttää x-koordinaattien tarkistuksessa näytön leveyttä ja y-koordinaattien tarkistuksessa näytön korkeutta.  
+haittaa kunhan hahmo pysähtyy. Muista käyttää x-koordinaattien tarkistuksessa näytön leveyttä ja y-koordinaattien tarkistuksessa näytön korkeutta.
 
               </div>
             </div>

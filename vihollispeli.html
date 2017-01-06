@@ -75,7 +75,49 @@
             <div class="row">
               <div class="">
 
+                Nyt meillä on liikkuva hahmo. Seuraavaksi tehdään vihollispeli.
 
+                <h2> Tehtävä 1: Vihollinen </h2>
+                Jos sinulla ei ole vielä piirrettynä viholliselle sopivaa kuvaa, tee se nyt. Luo koodiisi
+                <code> viholliset </code> -lista heti <code> hahmot </code> -listan jälkeen. Viholliset -listasta tulee muuten samanlainen kuin <code> hahmot
+                </code> -listasta, mutta se tulee sisältämään vihollisia. Jos et muista enää mitään <code> hahmot </code> -listasta,
+                palaa katsomaan edellisen osan <a href="pygame.html#kontrolli"> kontrolli </a> -lukua.
+
+              </br> </br>
+
+              Alusta listaan yksi elementti viholliskuvallasi. Listan tulee näyttää nyt suunnilleen seuraavalta, "vihollinen.png" tilalla oma tiedostonimesi:
+
+</br></br>
+<pre>
+viholliset = [["vihollinen.png", 200, 200]]
+</pre>
+
+<h2> Tehtävä 2: Tarvittavat muutokset koodiin </h2>
+Koodissasi on ehto, jonka mukaan <code>hahmot</code> -listan hahmot ilmestyvät näytölle vasta kun painetaan välilyöntiä.
+Vihollinen ei kuitenkaan nyt ilmesty samalla näytölle koska se ei kuulu <code>hahmot</code> -listaan. Tee nyt tarvittavat muutokset,
+jotta <code>viholliset</code> -listan vihollinen ilmestyy näytölle välilyöntiä painettaessa.
+
+</br> </br>
+Sinun täytyy ensin muokata <code> kontrolli </code> -funktion määrityksessä sen parametreja. Lisää funktion parametriksi vihollislista seuraavasti:
+
+</br></br>
+<pre>
+def kontrolli(hahmot, tapahtuma, viholliset):
+</pre>
+</br>
+ja muokkaa myös funktion kutsumista seuraavaksi:
+</br></br>
+<pre>
+kontrolli(hahmot, tapahtuma, viholliset)
+</pre>
+</br>
+
+Tämän jälkeen katso koodisi ehtolauseen
+</br></br>
+<pre>
+if tapahtuma.key == pygame.K_ESCAPE:
+</pre>
+</br> sisältöä. Lisää sinne <code> viholliset </code> listan läpikäynti niin että vihollisen näyttämisen <code> False </code> -arvo muutetaan <code>True</code>ksi.
               </div>
             </div>
         </div>
