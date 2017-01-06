@@ -300,23 +300,28 @@ else:
 
       <h2 id="montaelselohkoa"> Monta else -lohkoa </h2>
       Edellisessä tehtävässä ohjelma tarkisti, onko käyttäjän antama vuosi mennyt vai ei. Nyt haluamme tehdä tarkempaa analyysiä, kuinka kaukana menneisyydessä annettu vuosiluku on.
-      Seuraavassa esimerkissä kysytään käyttäjältä luku. Sen jälkeen siirrytään ehtoihin. Jos luku on suurempi tai yhtä suuri kuin 2017, tulostetaan lohkon sisällä oleva teksti ja ohjelman suoritus loppuu.
-      Seuraavan ehdon tunnussana <i>elif</i> on lyhenne sanoista <i>else if</i> ja tarkoittaa suomeksi <i> muuten jos </i>. Elif -ehtoihin mennään, jos ensimmäinen if-ehto ei toteudu.
-      Elif-ehdot käydään läpi järjestyksessä ja heti jos yksikin ehto toteutuu, sen sisällä oleva ohjelmapätkä suoritetaan ja tässä esimerkissä ohjelman suoritus lopetetaan. Mikäli
-      yksikään elif-ehdoista ei toteudu, suoritetaan else-lohkon sisällä oleva koodi.
-    </br></br>
-
+      Seuraavassa esimerkissä kerrotaan, onko vuosi mennyt, 2000-luvulla vai 1900-luvulla. Kopioi esimerkki ja kokeile sitä.
+</br></br>
 <pre>
 luku = int(input('Anna vuosi: '))
 if luku >= 2017:
     print('Vuosi ei ole vielä mennyt.')
-elif luku < 1900:
-    print('Vuosi on 1800-luvulla tai aiemmin.')
 elif luku < 2000:
     print('Vuosi on 1900-luvulla')
 else:
     print('Vuosi on 2000-luvulla')
 </pre>
+
+Sitten saman asian tekevä esimerkki Scratchilla:
+</br></br>
+<img src="assets/img/scratch_elif.png" />
+</br></br>
+
+      </br>
+
+      Huomataan että saman asian toteuttaminen on monimutkaisempaa Scratchilla. Scratchissa tarvitaan kaksi jos - muuten -rakennetta
+      joista toinen menee toisen muuten -lohkoon. Pythonissa saman asian ajaa <code> elif </code>. Elif tarkoittaa <code> else if</code>
+      eli jos muuten.
 
       <br>
 
