@@ -502,6 +502,16 @@ def kontrolli(hahmot, tapahtuma):
             päähahmo[1] += 10
 </pre>
 
+<h2> Tehtävä 7: Hahmon liikkumisen rajaus näytölle </h2>
+Kokeile liikuttaa hahmoa ikkunan rajojen yli pois näkyvistä. Ei ole hyvä että hahmo voi liikkua ikkunan rajojen ulkopuolelle,
+joten tehtävänä on nyt koodata tarkistukset, joiden avulla ei ole mahdollista että hahmo liikkuu ikkunan ulkopuolelle.
+
+</br> </br>
+Vinkki: Tarvitset tarkistuksissa sekä koko näytön pituutta sekä leveyttä. Kuvan sijainti määrittyy Pygamessa kuvan vasemman yläkulman mukaan.
+Siispä tulet huomaamaan, että jos esimerkiksi pienimpänä mahdollisena x-koordinaattina 0 ja suurimpana mahdollisena x-koordinaattina 640 (eli näytön leveys),
+vasemmalle mentäessä hahmo pysähtyy näkyviin näytölle ja oikealle mennessä se menee näytön yli ja pysähtyy vasta ikkunan ulkopuolelle. Tämä ei kuitenkaan
+haittaa kunhan hahmo pysähtyy. Muista käyttää x-koordinaattien tarkistuksessa näytön leveyttä ja y-koordinaattien tarkistuksessa näytön korkeutta.  
+
               </div>
             </div>
         </div>
