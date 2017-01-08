@@ -331,14 +331,14 @@ Ohjelma siis toimii niin, että ensin kysytään käyttäjältä lukua ja tallen
 
       <h2 id="montaelselohkoa"> Monta else -lohkoa </h2>
       Edellisessä tehtävässä ohjelma tarkisti, onko käyttäjän antama vuosi mennyt vai ei. Nyt haluamme tehdä tarkempaa analyysiä, kuinka kaukana menneisyydessä annettu vuosiluku on.
-      Seuraavassa esimerkissä kerrotaan, onko vuosi mennyt, 2000-luvulla vai 1900-luvulla. Kopioi esimerkki ja kokeile sitä.
+      Seuraavassa esimerkissä kerrotaan, onko vuosi mennyt, 2000-luvulla vai 1900-luvulla tai aiemmin. Kopioi esimerkki ja kokeile sitä.
 </br></br>
 <pre>
 luku = int(input('Anna vuosi: '))
 if luku >= 2017:
     print('Vuosi ei ole vielä mennyt.')
 elif luku < 2000:
-    print('Vuosi on 1900-luvulla')
+    print('Vuosi on 1900-luvulla tai aiemmin')
 else:
     print('Vuosi on 2000-luvulla')
 </pre>
