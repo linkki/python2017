@@ -88,7 +88,21 @@
                 kysy reippaasti neuvoa ohjaajalta.
               </br></br>
 
+              <h2> Miten Python-koodia koodataan ja miten tietokone suorittaa sen? </h2>
+              Python-koodia koodataan kirjoittamalla tekstieditoriin. Tekstieditori on siis ohjelma, jonne kirjoitetaan tekstiä,
+              ja ohjelmointiin tarkoitetuissa tekstieditoreissa tekstit voidaan myös ajaa koodina. Python on tulkittava kieli. Se tarkoittaa suurpiirteisesti sitä, että
+              kun painetaan vihreää kolmiota joka ajaa ohjelman, Python-tulkki tulkitsee rivi kerrallaan koodisi tietokoneen ymmärtämään muotoon ja suorittaa koodirivin.
+
                 <h2>Tehtävä 1: Tulostus</h2>
+
+                Tulostamista Pythonissa voi ajatella hieman samankaltaisena asiana kuin Scratchissa sanomista. Pythonissa ei lähtökohtaisesti ole hahmoja kuten Scratchissa, pelihahmojen luonti vaatii monimutkaisempia komentoja joita opetellaan vasta myöhemmin.
+                Tulostaminen tarkoittaa siis sitä, että ohjelma itse sanoo ulkopuolelleen jotain. Seuraavassa kuvassa on muistutuksen vuoksi esimerkki Scratchin sanomisesta. Kuvan jälkeen
+                olevassa tehtävässä harjoitellaan tulostamista ja tehtävän myötä ymmärrät mitä tulostaminen tarkoittaa käytännössä.
+
+              </br></br>
+                <img src="assets/img/scratch_heimaailma.png" alt="Scratch Hei maailma" />
+              </br></br>
+
                 1. Luo uusi projekti ja anna sille nimeksi laskin. Pycharmissa tämä tapahtuu File -> New Project -valikkojen kautta.
 
               </br></br>
@@ -97,21 +111,17 @@
 
                 2. Luo projektiin uusi Python-tiedosto nimeltään laskin </br></br>
 
-                3. Kirjoita tiedostoon seuraava koodi:
+                3. Kirjoita tiedostoon allaoleva koodirivi. Pythonissa on erittäin tärkeää että lainausmerkit ja sulut ovat oikeassa järjestyksessä, joten
+                jos ohjelma ei toimi niin tarkista että ne on kirjoitettu oikein. </br>
               </br>
                 <code>print("Hei maailma")</code>
               </br>  </br>
              4. Aja koodi joko Run -> Run 'laskin' -valikosta tai vihreästä kolmiosta painamalla. Vihreä kolmio on siis nappi joka löytyy editorista oikeasta yläreunasta.
-               </br></br> Ohjelman pitäisi tulostaa "Hei maailma". Tulostuksen pitäisi Pycharm-editorissa näyttää tältä:
+           </br></br> Ohjelman pitäisi tulostaa "Hei maailma". Tulostuksen pitäisi Pycharm-editorin alalaidassa olevassa tulostusikkunassa näyttää tältä:
            </br></br>
              <img src="assets/img/heimaailma.png" alt="tulostus Hei maailma" />
            </br></br>
 
-           Tulostamista Pythonissa voi ajatella hieman samankaltaisena asiana kuin Scratchissa sanomista. Pythonissa ei lähtökohtaisesti ole hahmoja kuten Scratchissa, pelihahmojen luonti vaatii monimutkaisempia komentoja joita opetellaan vasta myöhemmin.
-           Tulostaminen tarkoittaa siis sitä, että ohjelma itse sanoo ulkopuolelleen jotain.
-         </br></br>
-           <img src="assets/img/scratch_heimaailma.png" alt="Scratch Hei maailma" />
-         </br>
 
            <h2>Muuttujat </h2>
            Pythonissa tieto talletetaan muuttujiin. Scratchissa muuttujien alkuarvo on 0, mutta Pythonissa muuttujalle asetetaan arvo heti sitä luodessa. Seuraava koodi asettaa aiemmin luoduille Scratch-muuttujille
@@ -119,6 +129,8 @@
 
          </br></br>
           <img src="assets/img/scratch_muuttujat.png" /> </br></br>
+
+          Pythonin muuttujiin tiedon tallentaminen
 
            Pythonissa muuttujat voivat saada monentyyppisiä arvoja, aivan kuten Scratchissakin. Kaikissa ohjelmointikielissä se ei ole itsestäänselvää. Allaolevan esimerkin ensimmäisellä rivillä talletetaan muuttujaan x <i>luku</i> ja toisella rivillä talletetaan muuttujaan paikka <i>merkkijono</i>.
            <i>Merkkijono</i> tarkoittaa tekstiä, ja merkkijonon tunnistaa ympärillä olevista lainausmerkeistä. Esimerkiksi "kissa" on merkkijono. Merkkijono voi kuitenkin myös sisältää numeron, esimerkiksi "2" on merkkijono.
@@ -138,7 +150,9 @@
 
          </br>
 
-           Määrittele muuttuja nimi, jolle annat arvoksi oman nimesi <i>merkkijonona</i> (eli lainausmerkit "" nimen ympärillä). Tulosta tämän jälkeen (Scratchissa hahmo sanoo) tämä muuttuja. Tulostua pitäisi muuttujan sisältö, eli oma nimesi.
+           1. Määrittele muuttuja nimi, jolle annat arvoksi oman nimesi <i>merkkijonona</i> (eli lainausmerkit "" nimen ympärillä).
+
+         </br> </b3> 2. Tulosta tämän jälkeen (Scratchissa hahmo sanoo) tämä muuttuja. Tulostua pitäisi muuttujan sisältö, eli oma nimesi.
 
            <h2>Laskutoimitukset</h2>
 
@@ -152,15 +166,26 @@
          <img src="assets/img/yhteenlasku.png" alt="print(1 + 4)"/>
 
          <h2> Paritehtävä 3: Tee laskutoimituksia </h2>
-         Tee ohjelma, joka Pythonissa tulostaa, Scratchissa sanoo kahden luvun tulon ja erotuksen ylläolevan yhteenlaskun tulostusesimerkin mukaisesti. Tarvitset tässä + -merkin tilalla merkkejä - ja *.
+         1. Tehkää ohjelma, joka Pythonissa tulostaa, Scratchissa sanoo kahden luvun tulon. Pythonissa kertomerkki on tähtimerkki *. Valitkaa luvut itse. Käyttäkää ylläolevaa 1 + 4 -esimerkkiä apuna.
+
+      </br> </br> 2. Tehkää ohjelma, joka tulostaa, Scratchissa sanoo, edellisessä kohdassa käyttämiesi lukujen erotuksen.
+
+      <h2>Laskutoimituksen tuloksen tallentaminen muuttujaan</h2>
+      Laskutoimituksen tuloksen voi tallentaa muuttujaan ja käyttää muuttujaa myöhemmin. Seuraavassa esimerkissä tallennetaan lukujen 2 ja 1 erotus muuttujaan <i> erotus </i> sekä tulostetaan muuttuja sen jälkeen.
+
+</br></br>
+<pre>
+erotus = 2 - 1
+print(erotus)
+</pre>
 
          <h2> Tehtävä 4: Laskutoimituksen tulos muuttujaan </h2>
          Tee ohjelma, joka laskee yhteenlaskun 1 + 5 tallentaen sen tuloksen muuttujaan summa. Tämän jälkeen tulosta muuttuja summa. Tulostuksen pitäisi näyttää seuraavalta:
         </br>  </br>
          <img src="assets/img/yhteenlaskutulostus.png" />
 
-         <h2> Syötteen kysyminen käyttäjältä </h2>
-         Nyt osaamme tulostaa muuttujan sekä tekstiä. Otetaan seuraavaksi Scratch-vertaus käyttäjältä merkkijonon kysymiseen. Seuraavassa ensin Scratch-koodi ja sitten Python-koodi jossa sanominen on muutettu tulostamiseksi.
+         <h2> Merkkijonon kysyminen käyttäjältä ja sen tallentaminen muuttujaan </h2>
+         Nyt osaamme tulostaa muuttujan sekä tekstiä. Otetaan seuraavaksi Scratch-vertaus käyttäjältä merkkijonon kysymiseen. Seuraavassa ensin Scratch-koodi ja sitten Python-koodi jossa sanominen on muutettu tulostamiseksi. Testaa Python-esimerkkiä.
 
        </br> </br>
         <img src="assets/img/kysymerkkijono.png" />
@@ -170,6 +195,7 @@ vastaus = input("Anna merkkijono: ")
 print(vastaus)
 </pre>
 
+<h2> Luvun kysyminen käyttäjältä ja sen tallentaminen muuttujaan </h2>
          Entä jos haluaisimme tehdä laskutoimituksen, jonka luvut riippuvat käyttäjästä? Haluaisimme siis, että käyttäjä voisi antaa kaksi
          lukua ja tietokone voisi laskea esimerkiksi niiden yhteenlaskun. Näin pääsisimme lähemmäksi osion lopullista tavoitettamme, laskimen koodaamista. Seuraava koodi kysyy käyttäjältä kaksi lukua,
          asettaa ne muuttujiin x ja y, sekä tulostaa niiden summan. Kirjoita seuraava koodi tekstieditoriin, aja se ja testaa ohjelmaa.
@@ -182,7 +208,14 @@ summa = x + y
 print(summa)
 </pre>
 
-       <br> Ylläoleva koodi näyttää monimutkaiselta siksi, että se kysyy lukuja eikä tekstiä. Poista nyt lukujen kysymisistä int( ) -ympärykset siten että koodisi näyttää sen jälkeen tältä:
+       <br> Ylläoleva koodi näyttää monimutkaiselta siksi, että se kysyy lukuja eikä tekstiä. Koodi
+
+<code> x = int(input("Anna ensimmäinen luku: ")) </code> kysyy siis lukua ja tallentaa sen muuttujaan x, siinä missä koodi
+<code> x = input("Anna ensimmäinen luku: ")</code> kysyisi merkkijonoa ja tallentaisi sen muuttujaan x.
+
+
+</br> </br>
+Poista nyt lukujen kysymisistä int( ) -ympärykset siten että koodisi näyttää sen jälkeen tältä:
 
      </br></br>
 <pre>
@@ -206,39 +239,23 @@ print(summa)
       tehdä oikein esimerkkien mukaan, muuten koodin ajaminen ei onnistu. Sisennykset ovat ensimmäinen merkittävä Scratchin Pythonista erottava tekijä.
 
 
-      <h2> Esimerkki ehdollisuudesta: Itseisarvo </h2>
+      <h2 id="onkolukupositiivinen"> Esimerkki ehdollisuudesta: Onko luku positiivinen </h2>
 
-      Otetaan esimerkiksi ohjelma, joka kysyy käyttäjältä lukua ja tulostaa
-      sen itseisarvon. Itseisarvo tarkoittaa luvun etäisyyttä nollaan. Positiivisilla luvuilla itseisarvo on siis luku itse, ja negatiivisilla luvuilla itseisarvo on -1 * luku.
-      Seuraavasta kuvasta nähdään, että molempien lukujen, -1 ja 1, itseisarvo on 1.
-
-    </br>  </br>
-    <img src="assets/img/lukusuora.png" alt="lukusuora jolla -1 ja 1"/>  </br>  </br>
-
-      Seuraavaksi ensin Scratch-esimerkki itseisarvon laskemista muuttujalle
-      nimeltään luku, sitten Python-esimerkki jossa ensin kysytään luku käyttäjältä.
-
-    </br>  </br>
-     <img src="assets/img/scratch_itseisarvo.png" /> </br>
-
-    </br></br>
+      Otetaan esimerkiksi ohjelma, joka kysyy käyttäjältä lukua ja kertoo, onko luku positiivinen vai negatiivinen. Tässä esimerkissä 0 lasketaan mukaan positiiviseksi luvuksi.
+</br> </br>
 <pre>
-luku = int(input("Anna luku jonka itseisarvon haluat tietää: "))
-if luku < 0:
-    print(-1 * luku)
+luku = int(input("Anna luku: "))
+if luku > -1:
+    print("Luku on positiivinen")
 else:
-    print(luku)
+    print("Luku on negatiivinen")
 </pre>
 
-      <br>
-
-      Ylläoleva Python-ohjelma toimii siis niin, että ensimmäisellä rivillä kysytään käyttäjältä syöte ja tallennetaan se muuttujaan luku.
-      Toisella rivillä määritetään ehto: jos luku on pienempi kuin 0, siirrytään seuraavalle riville. Jos luku ei ole pienempi kuin 0
-      (eli on 0 tai suurempi kuin 0), siirrytään suoraan else-lohkoon eli viidennelle riville. Kopioi ylläoleva ohjelma ja kokeile sitä
-      sekä positiivisilla että negatiivisilla luvuilla. Tulet tarvitsemaan sitä pohjaksi seuraavaan tehtävään.
+Ohjelma siis toimii niin, että ensin kysytään käyttäjältä lukua ja tallennetaan se muuttujaan <i> luku </i>. Tämän jälkeen jos luku on suurempi kuin -1, tulostetaan
+"Luku on positiivinen" (if). Jos luku ei ole suurempaa kuin -1 eli on -1 tai pienempi kuin se, tulostetaan "Luku on negatiivinen" (else).
 
       <h3> Huom! Else -lohko ei ole pakollinen. Mikäli ylläolevasta esimerkistä poistettaisiin else-lohko sisältöineen, ohjelma
-      tulostaisi luvun itseisarvon vain jos se on negatiivinen, ei muuten. </h3>
+      tulostaisi "Luku on positiivinen" jos luku on positiivinen, mutta jos luku on negatiivinen niin se ei tulostaisi mitään. </h3>
 
       <h2> Paritehtävä 6: Vuositarkistus </h2>
 
@@ -248,7 +265,7 @@ else:
 
     </br>
       Tee ohjelma, joka kysyy käyttäjältä vuoden. Mikäli vuosi on jo mennyt (eli on pienempi kuin 2017), tulostetaan (Scratchissa hahmo sanoo) "Vuosi meni jo!", muuten tulostetaan: "Vuosi ei ole vielä mennyt.".
-      Käytä kopioimaasi itseisarvoesimerkkiä pohjana.
+      Käytä kopioimaasi luvun positiivisuuden/negatiivisuuden ilmoittavaa esimerkkiä pohjana.
 
       <h2> Suuruuden vertailuoperaattorit </h2>
 
@@ -339,11 +356,16 @@ Sitten saman asian tekevä esimerkki Scratchilla:
 
       <br>
 
+<h2> Tehtävä 7: Huomioidaan jos luku on nolla </h2>
+Palaa katsomaan <a href="#onkolukupositiivinen"> Onko luku positiivinen </a> -esimerkkiä. Tehtävänäsi on toteuttaa ohjelma, joka
+kysyy käyttäjältä lukua, ja tulostaa "Luku on nolla", jos luku on 0, "Luku on positiivinen", jos luku on suurempi kuin nolla,
+ja "Luku on negatiivinen" jos luku on pienempi kuin nolla.
+
       <h2> Laskin </h2>
       Seuraava projekti on tehdä laskin, joka ottaa syötteinä kaksi lukua ja laskutoimituksen. Ohjelman tulee laskea näille luvuille
       käyttäjän antama laskutoimitus ja tulostaa lopputulos. Ohjelma tehdään kahdessa osassa seuraavissa tehtävissä.
 
-      <h2> Tehtävä 7: Laskin osa 1 </h2>
+      <h2> Tehtävä 8: Laskin osa 1 </h2>
       Laskinohjelman alussa tulee kysyä käyttäjältä kaksi lukua, tallentaa ne muuttujiin, sekä kysyä laskutoimitus <i>merkkijonona</i> ja tallentaa se muuttujaan.
       Lukujen ja laskutoimituksen tulee näyttää seuraavalta ohjelmaa suoritettaessa:
 
@@ -353,7 +375,7 @@ Sitten saman asian tekevä esimerkki Scratchilla:
 
       <br>
 
-      Palaa katsomaan neuvoa kohtaan Syötteen kysyminen käyttäjältä ja huomioi, että luku kysytään käyttäjältä eri tavalla kuin merkkijono.
+      Huomioi, että luku kysytään käyttäjältä eri tavalla kuin merkkijono.
 
       <h2> Tehtävä 8: Laskin osa 2 </h2>
       Nyt meillä on muuttujiin tallennettuina kaksi lukua <i> lukuina </i> sekä laskutoimitus <i> merkkijonona </i>. Seuraavaksi tarvitsemme ehdollisuutta, tavoitteena
