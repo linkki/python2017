@@ -216,8 +216,12 @@ print(vastaus)
 
 <h2> Luvun kysyminen käyttäjältä ja sen tallentaminen muuttujaan </h2>
          Entä jos haluaisimme tehdä laskutoimituksen, jonka luvut riippuvat käyttäjästä? Haluaisimme siis, että käyttäjä voisi antaa kaksi
-         lukua ja tietokone voisi laskea esimerkiksi niiden yhteenlaskun. Näin pääsisimme lähemmäksi osion lopullista tavoitettamme, laskimen koodaamista. Seuraava koodi kysyy käyttäjältä kaksi lukua,
-         asettaa ne muuttujiin x ja y, sekä tulostaa niiden summan. Kirjoita seuraava koodi tekstieditoriin, aja se ja testaa ohjelmaa.
+         lukua ja tietokone voisi laskea esimerkiksi niiden yhteenlaskun. Näin pääsisimme lähemmäksi osion lopullista tavoitettamme, laskimen koodaamista.
+
+<h2> Tehtävä 5: Tee esimerkin mukaan </h2>
+
+Seuraava koodi kysyy käyttäjältä kaksi lukua,
+asettaa ne muuttujiin x ja y, sekä tulostaa niiden summan. Kirjoita koodi tekstieditoriin, aja se ja testaa ohjelmaa. Sen jälkeen jatka lukemista ja tee ohjeen mukaan.
 
 </br></br>
 <pre>
@@ -249,7 +253,7 @@ print(summa)
     int( ) -ympäryksiä oleva input-käsky kohtelee kysyttyä lukua <i>merkkijonona</i>. Ensimmäisessä esimerkissä siis lukujen yhteenlasku lasketaan oikein,
     toisessa esimerkissä vain yhdistetään kysytyt luvut niin että esimerkiksi luvuista 1 ja 2 tulisi tulokseksi "12".
 
-      <h2>Tehtävä 5: Tulosta käyttäjältä kysyttyjen lukujen osamäärä </h2>
+      <h2>Tehtävä 6: Tulosta käyttäjältä kysyttyjen lukujen osamäärä </h2>
       Tee ohjelma, joka kysyy käyttäjältä kaksi lukua ja tulostaa niiden osamäärän. Kahden luvun jakolasku tehdään Pythonissa / -merkillä.
 
       <h2>Ehdollisuus</h2>
@@ -265,6 +269,10 @@ print(summa)
       <h2 id="onkolukupositiivinen"> Esimerkki ehdollisuudesta: Onko luku positiivinen </h2>
 
       Otetaan esimerkiksi ohjelma, joka kysyy käyttäjältä lukua ja kertoo, onko luku positiivinen vai negatiivinen. Tässä esimerkissä 0 lasketaan mukaan positiiviseksi luvuksi.
+
+    </br> </br>
+     <img src="assets/img/scratch_positiivinen.png" />
+
 </br> </br>
 <pre>
 luku = int(input("Anna luku: "))
@@ -280,7 +288,7 @@ Ohjelma siis toimii niin, että ensin kysytään käyttäjältä lukua ja tallen
       <h3> Huom! Else -lohko ei ole pakollinen. Mikäli ylläolevasta esimerkistä poistettaisiin else-lohko sisältöineen, ohjelma
       tulostaisi "Luku on positiivinen" jos luku on positiivinen, mutta jos luku on negatiivinen niin se ei tulostaisi mitään. </h3>
 
-      <h2> Paritehtävä 6: Vuositarkistus </h2>
+      <h2> Paritehtävä 7: Vuositarkistus </h2>
 
       <div style="border:1px solid black; padding: 10px;">Paritehtävä tarkoittaa sitä, että teet tehtävän parin kanssa. Jos et löydä vierestäsi paria niin kerro siis ohjaajalle että
       tarvitset parin. Pari tekee toisen version saman asian toteuttavasta ohjelmasta Scratchilla ja toisen version Pythonilla.
@@ -379,7 +387,7 @@ Sitten saman asian tekevä esimerkki Scratchilla:
 
       <br>
 
-<h2> Tehtävä 7: Huomioidaan jos luku on nolla </h2>
+<h2> Tehtävä 8: Huomioidaan jos luku on nolla </h2>
 Palaa katsomaan <a href="#onkolukupositiivinen"> Onko luku positiivinen </a> -esimerkkiä. Tehtävänäsi on toteuttaa ohjelma, joka
 kysyy käyttäjältä lukua, ja tulostaa "Luku on nolla", jos luku on 0, "Luku on positiivinen", jos luku on suurempi kuin nolla,
 ja "Luku on negatiivinen" jos luku on pienempi kuin nolla.
@@ -388,7 +396,7 @@ ja "Luku on negatiivinen" jos luku on pienempi kuin nolla.
       Seuraava projekti on tehdä laskin, joka ottaa syötteinä kaksi lukua ja laskutoimituksen. Ohjelman tulee laskea näille luvuille
       käyttäjän antama laskutoimitus ja tulostaa lopputulos. Ohjelma tehdään kahdessa osassa seuraavissa tehtävissä.
 
-      <h2> Tehtävä 8: Laskin osa 1 </h2>
+      <h2> Tehtävä 9: Laskin osa 1 </h2>
       Laskinohjelman alussa tulee kysyä käyttäjältä kaksi lukua, tallentaa ne muuttujiin, sekä kysyä laskutoimitus <i>merkkijonona</i> ja tallentaa se muuttujaan.
       Lukujen ja laskutoimituksen tulee näyttää seuraavalta ohjelmaa suoritettaessa:
 
@@ -400,7 +408,7 @@ ja "Luku on negatiivinen" jos luku on pienempi kuin nolla.
 
       Huomioi, että luku kysytään käyttäjältä eri tavalla kuin merkkijono.
 
-      <h2> Tehtävä 8: Laskin osa 2 </h2>
+      <h2> Tehtävä 9: Laskin osa 2 </h2>
       Nyt meillä on muuttujiin tallennettuina kaksi lukua <i> lukuina </i> sekä laskutoimitus <i> merkkijonona </i>. Seuraavaksi tarvitsemme ehdollisuutta, tavoitteena
       tunnistaa eri laskutoimitukset ja laskea lopputulos tunnistetun laskutoimituksen perusteella. Vinkkinä kannattaa katsoa kohtaa <a href="#montaelselohkoa"> "Monta else -lohkoa" </a> sekä seuraavaa kuvaa:
 
@@ -490,14 +498,14 @@ ja "Luku on negatiivinen" jos luku on pienempi kuin nolla.
     </code>
   </br></br>
 
-  <h2> Paritehtävä 9: Alaikäinen </h2>
+  <h2> Paritehtävä 10: Alaikäinen </h2>
   <div style="border:1px solid black; padding: 10px;">Paritehtävä tarkoittaa sitä, että teet tehtävän parin kanssa. Jos et löydä vierestäsi paria niin kerro siis ohjaajalle että
   tarvitset parin. Pari tekee toisen version saman asian toteuttavasta ohjelmasta Scratchilla ja toisen version Pythonilla.
   Lopuksi pari testaa että ohjelma toimii ja näyttää sen ohjaajalle. </div>
 </br>
   Tee ohjelma, joka kysyy käyttäjältä iän ja kertoo (Pythonissa tulostaen, Scratchissa hahmo sanoo), onko käyttäjä alaikäinen, eli hänen ikänsä on vähintään 0 mutta alle 18.
 
-  <h2> Paritehtävä 10: Sekunnit vuodessa </h2>
+  <h2> Paritehtävä 11: Sekunnit vuodessa </h2>
   Tee ohjelma, joka laskee, kuinka monta sekuntia on vuodessa. Voit olettaa, että vuodessa on 365 päivää (eli ei ole karkausvuosi).
   Tulosta lopputulos (Scratchissa hahmo sanoo).
 
