@@ -161,6 +161,23 @@
               Seuraavassa listan läpikäynti Scratchilla. Huomaamme että Scratchissa listan läpikäynti on huomattavasti monimutkaisempaa.
             </br></br> <img src="assets/img/scratch_lapikaynti.png" alt="scratch listan läpikäynti"/>
 
+<h2> Esimerkki: Onko käyttäjän antama luku listassa </h2>
+Seuraava esimerkki kertoo käyttäjälle, onko häneltä kysytty luku listassa. <code> löytyyListasta </code> -totuusarvomuuttujaa
+käytetään apuna, jotta voidaan lopussa kertoa jos lukua ei löytynyt listasta. Kokeile esimerkkiä. </br></br>
+<pre>
+lista = [5, 4, 1, 8]
+luku = int(input("Anna luku josta haluat tietää onko se listassa: "))
+löytyyListasta = False
+
+for muuttuja in lista:
+  if muuttuja == luku:
+      print("Luku on listassa!")
+      löytyyListasta = True
+
+if löytyyListasta == False:
+  print("Ei löytynyt listasta.")
+</pre>
+
               <h2> Paritehtävä 2: Listan lukujen summa </h2>
               Tehtävänäsi on määritellä lista </br></br>
               <code> lista = [1, 2, 3, 4, 5] </code>  </br></br> ja laskea ohjelmallisesti lukujen summa. Sinun täytyy siis alussa
@@ -278,7 +295,7 @@ while luku &gt;= 1:
 
            Komennon voi sijoittaa esimerkiksi if-ehdon sisälle.
 
-           <h2> Tehtävä 6: Lukujen kysymisen lopettaminen käyttäjän pyyntöön </h2>
+           <h2> Paritehtävä 6: Lukujen kysymisen lopettaminen käyttäjän pyyntöön </h2>
            Paranna edellistä ohjelmaasi siten, että lukujen kysyminen lopetetaan kun käyttäjä syöttää luvun 0. Tällöin käyttäjälle tulostetaan myös summa. Tarvitset tähän if-ehtolausetta
            sekä break-komentoa.
 
