@@ -115,9 +115,53 @@ kontrolli(hahmot, tapahtuma, viholliset)
 Tämän jälkeen katso koodisi ehtolauseen
 </br></br>
 <pre>
-if tapahtuma.key == pygame.K_ESCAPE:
+if tapahtuma.key == pygame.K_SPACE:
 </pre>
 </br> sisältöä. Lisää sinne <code> viholliset </code> listan läpikäynti niin että vihollisen näyttämisen <code> False </code> -arvo muutetaan <code>True</code>ksi.
+
+</br></br>
+Myös piirtaminen -funktiota täytyy muokata jotta viholliset piirretään. Muokkaa sitä samaan tapaan kuin kontrolli-funktiota, eli
+aseta funktio ottamaan parametrina myös viholliset -lista. Viholliset-listan sisältö piirretään samankaltaisella for-silmukalla kuin
+hahmot-listan sisältö.
+
+<h2> Tehtävä 3: Pelihahmo kuolee osuessaan viholliseen </h2>
+
+Nyt pelissämme on hahmo, joka liikkuu nuolinäppäimillä, sekä vihollinen joka on paikoillaan. Seuraavaksi koodaa seuraavilla ohjeilla toiminnallisuus, jonka
+mukaan hahmo kuolee osuessaan mihin tahansa viholliset-listan sisältämään viholliseen.
+
+</br> </br> 1. Haluamme, että hahmot-listan ensimmäinen hahmo eli päähahmomme kuolee osuessaan mihin tahansa viholliset-listan viholliseen. Koodaa siis esimerkiksi seuraavanlainen for-silmukka kontrolli-funktion alkuun:</br>
+</br>
+<pre>
+for vihollinen in viholliset:
+</pre>
+
+</br>
+Silmukan sisään tee ehto, joka tarkistaa ovatko vihollisen ja hahmot-listan ensimmäisen hahmon koordinaatit samat. Mikäli ovat,
+poista päähahmo listasta seuraavalla komennolla:
+</br></br>
+<pre>
+del hahmot[0]
+</pre>
+
+<h2> Tehtävä 4: Vihollinen liikkumaan </h2>
+
+Jotta pelistä tulisi kiinnostavampi, vihollinen pitää saada liikkumaan. Koodaa seuraavanlainen liikkumiskäyttäytyminen viholliselle
+kontrolli-funktioon:
+</br></br>
+<pre>
+if vihollinen[1] > 640:
+    vihollinen[1] = 0
+else:
+    vihollinen[1] += 10
+</pre>
+Koodissa siis liikutetaan vihollista oikealle, ja kun vihollinen menee näytön yli oikealta, se siirretään näytön vasempaan reunaan.
+
+<h2> Tehtävä 5: Monta vihollista </h2>
+Lisää viholliset-listaan sen alustuksessa useampi vihollinen eri kohdille näyttöä ja kokeile peliä.
+
+<h2> Tehtävä 6: Vihollinen satunnaiseen pystysijaintiin näytöllä </h2>
+Muuta kontrolli-funktion vihollisten sijainnin muuttamista siten, että kun vihollinen siirretään takaisin näytön vasempaan reunaan, sen
+pystykoordinaatti arvotaan nollan ja näytön korkeuden (400) väliltä. 
               </div>
             </div>
         </div>

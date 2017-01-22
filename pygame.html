@@ -494,7 +494,7 @@ Vinkki: Hahmo liikkuu oikealle, kun x-koordinaatti kasvaa. Hahmo liikkuu alaspä
 <pre>
 def kontrolli(hahmot, tapahtuma):
     if tapahtuma.type == pygame.KEYDOWN:
-        if tapahtuma.key == pygame.K_ESCAPE:
+        if tapahtuma.key == pygame.K_SPACE:
             for hahmo in hahmot:
                 hahmo[3] = True
         elif tapahtuma.key == pygame.K_RIGHT:
